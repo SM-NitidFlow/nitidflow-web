@@ -16,5 +16,11 @@ build/
 *.log
 *.tsbuildinfo
 
+# Generado por Next en cada build; no se edita a mano
+next-env.d.ts
+
 # Artefactos de despliegue
 *.zip
+
+# Build de verificación local (npm run build:check)
+.next-build/
