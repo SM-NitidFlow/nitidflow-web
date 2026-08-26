@@ -1,26 +1,16 @@
-# Dependencias
-node_modules/
-
-# Builds
-.next/
-out/
-dist/
-build/
-
-# Entorno (nunca versionar secretos)
-.env
-.env*.local
-
 # Sistema / editor
 .DS_Store
 *.log
-*.tsbuildinfo
+Thumbs.db
 
-# Generado por Next en cada build; no se edita a mano
-next-env.d.ts
+# Fuentes de marca con licencia comercial — nunca se versionan.
+# Ver assets/fonts/README.md
+assets/fonts/*.woff2
+assets/fonts/*.woff
+assets/fonts/*.otf
+assets/fonts/*.ttf
 
-# Artefactos de despliegue
-*.zip
-
-# Build de verificación local (npm run build:check)
+# Restos del proyecto Next.js anterior (rama next-multipagina)
+node_modules/
+.next/
 .next-build/

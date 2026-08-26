@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gracias — Nitidflow</title>
+<meta name="description" content="Hemos recibido tu mensaje.">
+<meta name="theme-color" content="#0b1c2c">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css?v=20260817">
+<style>
+  .thanks{ min-height:100svh; display:grid; place-items:center; padding:var(--pad); }
+  .thanks__panel{
+    max-width:620px; width:100%;
+    padding:clamp(32px,4vw,60px);
+    border-radius:var(--r-lg);
+    text-align:center;
+  }
+  .thanks__panel .logoclip{ width:clamp(180px,32vw,300px); margin:0 auto 28px; }
+  .thanks__panel h1{
+    margin:0 0 16px;
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(1.7rem,4vw,2.6rem);
+    line-height:1.1; letter-spacing:-.02em; color:#fff;
+  }
+  .thanks__panel p{ margin:0 auto 28px; max-width:44ch; color:var(--text-dim); }
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <div class="bg__media"
+       data-silk
+       data-colors="#3d7ba8,#cfe2f0,#f4f1ec"
+       data-bg="#071522"
+       data-speed="0.35"
+       data-layers="4"
+       data-amplitude="0.3"
+       data-frequency="2"
+       data-angle="-12"
+       data-softness="0.6"
+       data-sheen="0.6"
+       data-grain="0.04"></div>
+  <div class="bg__scrim"></div>
+  <div class="bg__vignette"></div>
+</div>
+
+<main class="thanks">
+  <div class="panel thanks__panel">
+    <span class="logoclip"><img src="/assets/logo.png" alt="Nitidflow"></span>
+    <p class="eyebrow" style="margin-bottom:18px">MENSAJE RECIBIDO</p>
+    <h1>Gracias &mdash; lo tenemos.</h1>
+    <p>Leemos cada mensaje nosotros mismos y normalmente respondemos en un día laborable. Si es urgente, escríbenos directamente a <a href="mailto:hello@nitidflow.com" style="color:#fff">hello@nitidflow.com</a>.</p>
+    <a class="btn" href="/es/">VOLVER AL SITIO</a>
+  </div>
+</main>
+
+<script src="/js/silk.js" defer></script>
+</body>
+</html>

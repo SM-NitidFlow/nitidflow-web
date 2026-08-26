@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nitidflow — Agencia de automatización con IA | Automatizamos lo que frena tu negocio</title>
+<meta name="description" content="Nitidflow audita tus operaciones, encuentra el trabajo repetitivo y construye automatizaciones con IA llave en mano que ahorran tiempo, reducen costes y dejan que tu equipo se centre en lo que importa.">
+<meta name="theme-color" content="#0b1c2c">
+
+<link rel="alternate" hreflang="en" href="https://nitidflow.com/">
+<link rel="alternate" hreflang="es" href="https://nitidflow.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://nitidflow.com/">
+<link rel="canonical" href="https://nitidflow.com/es/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Nitidflow — Automatizamos lo que frena tu negocio">
+<meta property="og:description" content="Auditamos tus operaciones, encontramos el trabajo repetitivo y construimos automatizaciones con IA que reducen costes y ahorran cientos de horas.">
+<meta property="og:image" content="/assets/background-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="/assets/background-poster.jpg">
+<!-- ?v= es un cache buster. netlify.toml cachea /css/ 24 h, así que SÚBELO
+     (aquí y en index.html, thanks.html, es/gracias.html) en cada cambio de
+     CSS — si no, el HTML nuevo aterriza sobre estilos viejos. -->
+<link rel="stylesheet" href="/css/styles.css?v=20260817">
+
+<script>
+  (function () {
+    var m = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)');
+    if (!m || !m.matches) document.documentElement.classList.add('anim');
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Saltar al contenido</a>
+
+<!-- ============ fondo animado ============ -->
+<div class="bg" aria-hidden="true">
+  <div class="bg__media"
+       data-silk
+       data-colors="#3d7ba8,#cfe2f0,#f4f1ec"
+       data-bg="#071522"
+       data-speed="0.35"
+       data-layers="4"
+       data-amplitude="0.3"
+       data-frequency="2"
+       data-angle="-12"
+       data-softness="0.6"
+       data-sheen="0.6"
+       data-grain="0.04"></div>
+  <div class="bg__scrim"></div>
+  <div class="bg__vignette"></div>
+</div>
+
+<!-- ============ menú superior transparente ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Nitidflow — inicio">
+      <span class="logoclip logoclip--sm"><img src="/assets/logo.png" alt="Nitidflow"></span>
+    </a>
+
+    <nav class="nav__links" id="nav-links" aria-label="Principal">
+      <a href="#services">Servicios</a>
+      <a href="#how-it-works">Cómo funciona</a>
+      <a href="#automations">Automatizaciones</a>
+      <a href="#case-studies">Casos de éxito</a>
+      <a href="#faq">FAQ</a>
+      <span class="lang" role="group" aria-label="Idioma">
+        <a href="/?lang=en" data-lang="en" hreflang="en">EN</a>
+        <span class="lang__on" aria-current="true">ES</span>
+      </span>
+      <a class="btn btn--solid btn--sm nav__cta" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
+         data-cal-link="smnitidflow" data-cal-namespace="audit">Auditoría gratuita</a>
+    </nav>
+
+    <button class="nav__toggle" id="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+      <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ hero ============ -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+
+      <div class="panel hero__panel">
+        <p class="eyebrow" data-anim="hero">AUTOMATIZACIONES QUE AHORRAN TIEMPO Y DINERO</p>
+        <h1 class="hero__title" data-anim="hero">Automatizamos lo que frena tu negocio.</h1>
+        <p class="hero__sub" data-anim="hero">Auditamos tus operaciones, encontramos el trabajo repetitivo y construimos automatizaciones con IA que reducen costes, ahorran cientos de horas y permiten que tu equipo se centre en lo que de verdad importa.</p>
+
+        <div class="hero__cta" data-anim="hero">
+          <a class="btn btn--solid" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
+             data-cal-link="smnitidflow" data-cal-namespace="audit">Reserva una auditoría gratuita</a>
+          <a class="btn" href="#how-it-works">Ver cómo funciona</a>
+        </div>
+
+        <div class="trust" data-anim="hero">
+          <ul class="trust__faces" aria-hidden="true">
+            <li>MR</li><li>JK</li><li>AS</li><li>LP</li>
+          </ul>
+          <p class="trust__copy">Equipos que ya ahorran miles de horas cada mes confían en nosotros</p>
+        </div>
+      </div>
+
+      <div class="hero__logo" data-anim="hero-logo">
+        <span class="logoclip"><img src="/assets/logo.png" alt="Nitidflow" width="1808" height="504"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ cifras ============ -->
+  <section class="band" aria-label="Resultados de un vistazo">
+    <ul class="stats">
+      <li class="stat reveal">
+        <p class="stat__label">TIEMPO AHORRADO</p>
+        <p class="stat__value"><span class="count" data-count="1250" data-suffix="+">1250+</span></p>
+        <p class="stat__unit">horas al mes</p>
+      </li>
+      <li class="stat reveal">
+        <p class="stat__label">COSTE AHORRADO</p>
+        <p class="stat__value"><span class="count" data-prefix="$" data-count="42800" data-suffix="+">$42.800+</span></p>
+        <p class="stat__unit">al mes</p>
+      </li>
+      <li class="stat reveal">
+        <p class="stat__label">ROI</p>
+        <p class="stat__value"><span class="count" data-count="312" data-suffix=" %">312 %</span></p>
+        <p class="stat__unit">de media</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ marquesina de clientes ============ -->
+  <section class="marquee-wrap" aria-label="Empresas en crecimiento que confían en nosotros">
+    <p class="eyebrow eyebrow--center">EMPRESAS EN CRECIMIENTO QUE CONFÍAN EN NOSOTROS</p>
+    <div class="marquee" data-marquee>
+      <ul class="marquee__track">
+        <li>AcmeCo</li><li>Northline</li><li>Taskflow</li><li>Brightly</li><li>Scaleup</li><li>Framewell</li>
+      </ul>
+      <ul class="marquee__track" aria-hidden="true">
+        <li>AcmeCo</li><li>Northline</li><li>Taskflow</li><li>Brightly</li><li>Scaleup</li><li>Framewell</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ el problema ============ -->
+  <section class="section" id="problem">
+    <p class="eyebrow eyebrow--center reveal">EL PROBLEMA</p>
+    <h2 class="statement reveal">Tu equipo está ocupado. Eso no significa que sea productivo.</h2>
+    <p class="lede reveal">La mayoría de las empresas en crecimiento pierden entre el 20 y el 30 % de su semana en trabajo que no debería necesitar a una persona. Tiene esta pinta:</p>
+
+    <div class="grid">
+      <article class="panel tile reveal">
+        <h3>Trabajo manual repetitivo</h3>
+        <p>Las horas se esfuman metiendo datos, cuadrando agendas y dando partes de estado &mdash; trabajo que debería hacer una máquina mientras tu equipo piensa.</p>
+      </article>
+      <article class="panel tile reveal">
+        <h3>Copiar y pegar sin fin</h3>
+        <p>Los mismos datos pasan a mano entre bandejas de entrada, hojas de cálculo y CRMs. Cada traspaso es tiempo perdido y un error esperando a ocurrir.</p>
+      </article>
+      <article class="panel tile reveal">
+        <h3>Herramientas desconectadas</h3>
+        <p>Tu software no se habla entre sí, así que tus personas se han convertido en la capa de integración. Ese pegamento sale caro.</p>
+      </article>
+      <article class="panel tile reveal">
+        <h3>Errores humanos</h3>
+        <p>Los procesos manuales implican erratas, pasos que se olvidan y seguimientos que se caen. Los fallos pequeños se acumulan en silencio hasta costar dinero de verdad.</p>
+      </article>
+      <article class="panel tile reveal">
+        <h3>Respuestas lentas</h3>
+        <p>Los leads esperan horas una respuesta. Los tickets se acumulan de noche. En lo que tardas en contestar, tu competencia ya lo hizo.</p>
+      </article>
+      <article class="panel tile reveal">
+        <h3>Cero visibilidad</h3>
+        <p>Sacar informes cuesta días de recopilar números a mano, así que las decisiones se toman con datos caducados &mdash; o a ojo.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ la solución ============ -->
+  <section class="section" id="solution">
+    <p class="eyebrow eyebrow--center reveal">LA SOLUCIÓN</p>
+    <h2 class="statement reveal">Del trabajo manual a sistemas inteligentes y escalables.</h2>
+    <p class="lede reveal">Nitidflow es tu socio de automatización llave en mano. Nos encargamos de todo, del descubrimiento a la implementación y la optimización a largo plazo, para que veas resultados rápido.</p>
+
+    <ol class="rail">
+      <li class="panel rail__item reveal">
+        <span class="rail__step">PASO 01</span>
+        <h3>Auditoría</h3>
+        <p>Mapeamos cómo fluye realmente el trabajo en tu negocio y localizamos por dónde se escapan el tiempo y el dinero.</p>
+      </li>
+      <li class="panel rail__item reveal">
+        <span class="rail__step">PASO 02</span>
+        <h3>Descubrimiento</h3>
+        <p>Identificamos las oportunidades de automatización de mayor impacto y las ordenamos por ROI, no por novedad.</p>
+      </li>
+      <li class="panel rail__item reveal">
+        <span class="rail__step">PASO 03</span>
+        <h3>Diseño</h3>
+        <p>Diseñamos flujos a medida en torno a tus herramientas actuales y a la forma en la que ya trabaja tu equipo.</p>
+      </li>
+      <li class="panel rail__item reveal">
+        <span class="rail__step">PASO 04</span>
+        <h3>Construcción</h3>
+        <p>Construimos e integramos todo &mdash; agentes de IA, conectores, lógica &mdash; sin interrumpir las operaciones.</p>
+      </li>
+      <li class="panel rail__item reveal">
+        <span class="rail__step">PASO 05</span>
+        <h3>Lanzamiento</h3>
+        <p>Entregamos en semanas, formamos a tu equipo y documentamos cada flujo para que nada viva solo en la cabeza de una persona.</p>
+      </li>
+      <li class="panel rail__item reveal">
+        <span class="rail__step">PASO 06</span>
+        <h3>Optimización</h3>
+        <p>Monitorizamos, mantenemos y mejoramos continuamente cada automatización a medida que tu negocio evoluciona.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ flujo en directo ============ -->
+  <section class="section section--flow">
+    <div class="panel flow reveal">
+      <header class="flow__head">
+        <h3>Flujo de lead a CRM</h3>
+        <span class="flow__live"><span class="flow__dot"></span>En directo</span>
+      </header>
+
+      <ol class="flow__nodes" data-flow>
+        <li class="flow__node"><span class="flow__name">Nuevo lead</span><span class="flow__tool">Typeform</span></li>
+        <li class="flow__node"><span class="flow__name">La IA enriquece los datos</span><span class="flow__tool">Clearbit</span></li>
+        <li class="flow__node"><span class="flow__name">Añadir al CRM</span><span class="flow__tool">HubSpot</span></li>
+        <li class="flow__node"><span class="flow__name">Avisar al equipo comercial</span><span class="flow__tool">Slack</span></li>
+        <li class="flow__node"><span class="flow__name">Crear seguimiento</span><span class="flow__tool">Google Sheets</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ cómo funciona ============ -->
+  <section class="section" id="how-it-works">
+    <p class="eyebrow eyebrow--center reveal">CÓMO FUNCIONA</p>
+    <h2 class="statement reveal">Cinco pasos. Cero interrupciones.</h2>
+    <p class="lede reveal">Un proceso probado que te lleva de &laquo;lo hacemos todo a mano&raquo; a &laquo;el sistema se ocupa&raquo; sin parar tu negocio para conseguirlo.</p>
+
+    <ol class="steps steps--long">
+      <li class="panel step reveal">
+        <span class="step__n">01</span>
+        <h3>Auditoría de automatización</h3>
+        <p>Una revisión gratuita y estructurada de tus operaciones. Entrevistamos a tu equipo, observamos cómo se hace el trabajo y cuantificamos exactamente dónde se pierden las horas.</p>
+        <p class="step__out"><strong>Resultado:</strong> te llevas una lista priorizada de oportunidades, trabajes con nosotros o no.</p>
+      </li>
+      <li class="panel step reveal">
+        <span class="step__n">02</span>
+        <h3>Mapeo de procesos</h3>
+        <p>Documentamos tus flujos de principio a fin: cada herramienta, cada traspaso y cada punto de decisión. La mayoría de los equipos ve aquí sus propios cuellos de botella por primera vez.</p>
+        <p class="step__out"><strong>Resultado:</strong> un mapa claro de tus operaciones y el caso de ROI de cada mejora.</p>
+      </li>
+      <li class="panel step reveal">
+        <span class="step__n">03</span>
+        <h3>Diseño de IA a medida</h3>
+        <p>Diseñamos las automatizaciones alrededor de tu stack, no al revés. IA donde aporta criterio, lógica sencilla donde aporta fiabilidad.</p>
+        <p class="step__out"><strong>Resultado:</strong> un plano que tu equipo revisa y aprueba antes de que construyamos.</p>
+      </li>
+      <li class="panel step reveal">
+        <span class="step__n">04</span>
+        <h3>Implementación</h3>
+        <p>Construimos, integramos y probamos todo contra escenarios reales, y después desplegamos de forma gradual para que tus operaciones no pierdan el ritmo.</p>
+        <p class="step__out"><strong>Resultado:</strong> automatizaciones funcionando en semanas, con tu equipo formado desde el primer día.</p>
+      </li>
+      <li class="panel step reveal">
+        <span class="step__n">05</span>
+        <h3>Optimización continua</h3>
+        <p>Las automatizaciones no se dejan y se olvidan. Medimos el rendimiento, cazamos los casos raros y seguimos mejorando a medida que tu negocio cambia.</p>
+        <p class="step__out"><strong>Resultado:</strong> retornos que se acumulan, en lugar de deteriorarse poco a poco.</p>
+      </li>
+    </ol>
+
+    <div class="panel cta-band reveal">
+      <p class="eyebrow">EMPIEZA AQUÍ</p>
+      <h3>Descubre qué encuentra el primer paso en tu negocio.</h3>
+      <p>La auditoría es gratuita, dura 30 minutos y no te compromete a nada.</p>
+      <a class="btn btn--solid" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
+         data-cal-link="smnitidflow" data-cal-namespace="audit">Reserva tu auditoría gratuita</a>
+    </div>
+  </section>
+
+  <!-- ============ servicios ============ -->
+  <section class="section" id="services">
+    <p class="eyebrow eyebrow--center reveal">QUÉ HACEMOS</p>
+    <h2 class="statement reveal">Automatización de principio a fin, pensada para tener impacto.</h2>
+    <p class="lede reveal">Todo lo que necesitas para quitar el trabajo manual de tu negocio: diseñado, construido y mantenido por un único equipo responsable.</p>
+
+    <div class="grid grid--tight">
+      <article class="panel tile reveal"><h3>Automatización de flujos</h3><p>Automatiza tareas repetitivas y procesos de varios pasos en todas tus herramientas.</p></article>
+      <article class="panel tile reveal"><h3>Agentes de IA</h3><p>Agentes autónomos que cualifican, redactan, resumen y deciden &mdash; con límites claros.</p></article>
+      <article class="panel tile reveal"><h3>Automatización de CRM</h3><p>Registros que se actualizan solos. Pipelines que nunca se quedan obsoletos.</p></article>
+      <article class="panel tile reveal"><h3>Automatización de email</h3><p>Secuencias personalizadas, respuestas inteligentes y una bandeja que se ordena sola.</p></article>
+      <article class="panel tile reveal"><h3>Automatización de ventas</h3><p>Puntuación de leads, generación de propuestas y seguimientos que nunca se escapan.</p></article>
+      <article class="panel tile reveal"><h3>Atención al cliente</h3><p>Respuestas redactadas por IA, enrutado inteligente y respuestas al instante desde tu documentación.</p></article>
+      <article class="panel tile reveal"><h3>Operaciones internas</h3><p>Onboarding, aprobaciones y tareas administrativas resueltas sin un solo recordatorio.</p></article>
+      <article class="panel tile reveal"><h3>Informes</h3><p>KPIs calculados automáticamente y entregados donde tu equipo ya mira.</p></article>
+      <article class="panel tile reveal"><h3>Integraciones</h3><p>Conectamos las herramientas que ya usas para que los datos fluyan sin pegamento humano.</p></article>
+      <article class="panel tile reveal"><h3>Cuadros de mando</h3><p>Visibilidad operativa en directo: una pantalla, siempre al día, cero descargas manuales.</p></article>
+      <article class="panel tile reveal"><h3>Desarrollo de APIs</h3><p>Endpoints y middleware a medida cuando los conectores estándar no llegan.</p></article>
+      <article class="panel tile reveal"><h3>Soluciones de IA a medida</h3><p>Modelos y pipelines propios para problemas que ninguna plantilla resuelve.</p></article>
+    </div>
+
+    <!-- herramientas: Simple Icons (CC0) en línea, sin peticiones externas.
+         Slack / Salesforce / OpenAI muestran monograma porque sus marcas
+         se retiraron de Simple Icons a petición de sus propietarios. -->
+    <div class="tools-wrap reveal">
+      <p class="eyebrow eyebrow--center">HERRAMIENTAS QUE CONECTAMOS</p>
+      <p class="tools-note">Casi cualquier cosa con API. Si una herramienta no tiene conector, lo construimos.</p>
+<ul class="tools">
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"/></svg><span class="tool__n">n8n</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.38 3.498c-.27 0-.511.19-.566.465L9.85 18.986a.578.578 0 0 0 .453.678l4.095.826a.58.58 0 0 0 .682-.455l2.963-15.021a.578.578 0 0 0-.453-.678l-4.096-.826a.589.589 0 0 0-.113-.012zm-5.876.098a.576.576 0 0 0-.516.318L.062 17.697a.575.575 0 0 0 .256.774l3.733 1.877a.578.578 0 0 0 .775-.258l6.926-13.781a.577.577 0 0 0-.256-.776L7.762 3.658a.571.571 0 0 0-.258-.062zm11.74.115a.576.576 0 0 0-.576.576v15.426c0 .318.258.578.576.578h4.178a.58.58 0 0 0 .578-.578V4.287a.578.578 0 0 0-.578-.576Z"/></svg><span class="tool__n">Make</span></li>
+        <li class="tool tool--wm"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.157 0A4.151 4.151 0 0 0 0 4.161v15.678A4.151 4.151 0 0 0 4.157 24h15.682A4.152 4.152 0 0 0 24 19.839V4.161A4.152 4.152 0 0 0 19.839 0H4.157Zm10.61 8.761h.03a.577.577 0 0 1 .23.038.585.585 0 0 1 .201.124.63.63 0 0 1 .162.431.612.612 0 0 1-.162.435.58.58 0 0 1-.201.128.58.58 0 0 1-.23.042.529.529 0 0 1-.235-.042.585.585 0 0 1-.332-.328.559.559 0 0 1-.038-.235.613.613 0 0 1 .17-.431.59.59 0 0 1 .405-.162Zm2.853 1.572c.03.004.061.004.095.004.325-.011.646.064.937.219.238.144.431.355.552.609.128.279.189.582.185.888v.193a2 2 0 0 1 0 .219h-2.498c.003.227.075.45.204.642a.78.78 0 0 0 .646.265.714.714 0 0 0 .484-.136.642.642 0 0 0 .23-.318l.915.257a1.398 1.398 0 0 1-.28.537c-.14.159-.321.284-.521.355a2.234 2.234 0 0 1-.836.136 1.923 1.923 0 0 1-1.001-.245 1.618 1.618 0 0 1-.665-.703 2.221 2.221 0 0 1-.227-1.036 1.95 1.95 0 0 1 .48-1.398 1.9 1.9 0 0 1 1.3-.488Zm-9.607.023c.162.004.325.026.48.079.207.065.4.174.563.314.26.302.393.692.366 1.088v2.276H8.53l-.109-.711h-.065c-.064.163-.155.31-.272.439a1.122 1.122 0 0 1-.374.264 1.023 1.023 0 0 1-.453.083 1.334 1.334 0 0 1-.866-.264.965.965 0 0 1-.329-.801.993.993 0 0 1 .076-.431 1.02 1.02 0 0 1 .242-.363 1.478 1.478 0 0 1 1.043-.303h.952v-.181a.696.696 0 0 0-.136-.454.553.553 0 0 0-.438-.154.695.695 0 0 0-.378.086.48.48 0 0 0-.193.254l-.99-.144a1.26 1.26 0 0 1 .257-.563c.14-.174.321-.302.533-.378.261-.091.54-.136.82-.129.053-.003.106-.007.163-.007Zm4.384.007c.174 0 .347.038.506.114.182.083.34.211.458.374.257.423.377.911.351 1.406a2.53 2.53 0 0 1-.355 1.448 1.148 1.148 0 0 1-1.009.517c-.204 0-.401-.045-.582-.136a1.052 1.052 0 0 1-.48-.457 1.298 1.298 0 0 1-.114-.234h-.045l.004 1.784h-1.059v-4.713h.904l.117.805h.057c.068-.208.177-.401.328-.56a1.129 1.129 0 0 1 .843-.344h.076v-.004Zm7.559.084h.903l.113.805h.053a1.37 1.37 0 0 1 .235-.484.813.813 0 0 1 .313-.242.82.82 0 0 1 .39-.076h.234v1.051h-.401a.662.662 0 0 0-.313.008.623.623 0 0 0-.272.155.663.663 0 0 0-.174.26.683.683 0 0 0-.027.314v1.875h-1.054v-3.666Zm-17.515.003h3.262v.896L3.73 13.104l.034.113h1.973l.042.9H2.4v-.9l1.931-1.754-.045-.117H2.441v-.896Zm11.815 0h1.055v3.659h-1.055V10.45Zm3.443.684.019.016a.69.69 0 0 0-.351.045.756.756 0 0 0-.287.204c-.11.155-.174.336-.189.522h1.545c-.034-.526-.257-.787-.74-.787h.003Zm-5.718.163c-.026 0-.057 0-.083.004a.78.78 0 0 0-.31.053.746.746 0 0 0-.257.189 1.016 1.016 0 0 0-.204.695v.064c-.015.257.057.507.204.711a.634.634 0 0 0 .253.196.638.638 0 0 0 .314.061.644.644 0 0 0 .578-.265c.14-.223.204-.48.189-.74a1.216 1.216 0 0 0-.181-.711.677.677 0 0 0-.503-.257Zm-4.509 1.266a.464.464 0 0 0-.268.102.373.373 0 0 0-.114.276c0 .053.008.106.027.155a.375.375 0 0 0 .087.132.576.576 0 0 0 .397.11v.004a.863.863 0 0 0 .563-.182.573.573 0 0 0 .211-.457v-.14h-.903Z"/></svg><span class="tool__n">Zapier</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.992 1.966c-.434 0-.87.086-1.28.257L1.779 5.917c-.503.208-.49.908.012 1.116l8.982 3.558a3.266 3.266 0 0 0 2.454 0l8.982-3.558c.503-.196.503-.908.012-1.116l-8.957-3.694a3.255 3.255 0 0 0-1.272-.257zM23.4 8.056a.589.589 0 0 0-.222.045l-10.012 3.877a.612.612 0 0 0-.38.564v8.896a.6.6 0 0 0 .821.552L23.62 18.1a.583.583 0 0 0 .38-.551V8.653a.6.6 0 0 0-.6-.596zM.676 8.095a.644.644 0 0 0-.48.19C.086 8.396 0 8.53 0 8.69v8.355c0 .442.515.737.908.54l6.27-3.006.307-.147 2.969-1.436c.466-.22.43-.908-.061-1.092L.883 8.138a.57.57 0 0 0-.207-.044z"/></svg><span class="tool__n">Airtable</span></li>
+        <li class="tool"><span class="tool__mono" aria-hidden="true">Sl</span><span class="tool__n">Slack</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg><span class="tool__n">HubSpot</span></li>
+        <li class="tool"><span class="tool__mono" aria-hidden="true">Sa</span><span class="tool__n">Salesforce</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg><span class="tool__n">Notion</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg><span class="tool__n">Gmail</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z"/></svg><span class="tool__n">Google Sheets</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167h-7.249z"/></svg><span class="tool__n">Google Drive</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z"/></svg><span class="tool__n">Google Calendar</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.655 14.262c.281 0 .557.023.828.064 0 .005-.005.01-.005.014-.105.267-.234.534-.381.786l-1.219 2.106c-1.112 1.936-3.177 3.127-5.411 3.127h-2.432c-2.23 0-4.294-1.191-5.412-3.127l-1.218-2.106a6.251 6.251 0 0 1 0-6.252l1.218-2.106C6.736 4.832 8.8 3.641 11.035 3.641h2.432c2.23 0 4.294 1.191 5.411 3.127l1.219 2.106c.147.252.271.519.381.786 0 .004.005.009.005.014-.267.041-.543.064-.828.064-1.816 0-2.501-.607-3.291-1.306-.764-.676-1.711-1.517-3.44-1.517h-1.029c-1.251 0-2.387.455-3.2 1.278-.796.805-1.233 1.904-1.233 3.099v1.411c0 1.196.437 2.295 1.233 3.099.813.823 1.949 1.278 3.2 1.278h1.034c1.729 0 2.676-.841 3.439-1.517.791-.703 1.471-1.306 3.287-1.301Zm.005-3.237c.399 0 .794-.036 1.179-.11-.002-.004-.002-.01-.002-.014-.073-.414-.193-.823-.349-1.218.731-.12 1.407-.396 1.986-.819 0-.004-.005-.013-.005-.018-.331-1.085-.832-2.101-1.489-3.03-.649-.915-1.435-1.719-2.331-2.395-1.867-1.398-4.088-2.138-6.428-2.138-1.448 0-2.855.28-4.175.841-1.273.543-2.423 1.315-3.407 2.299S2.878 6.552 2.341 7.83c-.557 1.324-.842 2.726-.842 4.175 0 1.448.281 2.855.842 4.174.542 1.274 1.314 2.423 2.298 3.407s2.129 1.761 3.407 2.299c1.324.556 2.727.841 4.175.841 2.34 0 4.561-.74 6.428-2.137a10.815 10.815 0 0 0 2.331-2.396c.652-.929 1.158-1.949 1.489-3.03 0-.004.005-.014.005-.018-.579-.423-1.255-.699-1.986-.819.161-.395.276-.804.349-1.218.005-.009.005-.014.005-.023.869.166 1.692.506 2.404 1.035.685.505.552 1.075.446 1.416C22.184 20.437 17.619 24 12.221 24c-6.625 0-12-5.375-12-12s5.37-12 12-12c5.398 0 9.963 3.563 11.471 8.464.106.341.239.915-.446 1.421-.717.529-1.535.873-2.404 1.034.128.716.128 1.45 0 2.166-.387-.074-.782-.11-1.182-.11-4.184 0-3.968 2.823-6.736 2.823h-1.029c-1.899 0-3.15-1.357-3.15-3.095v-1.411c0-1.738 1.251-3.094 3.15-3.094h1.034c2.768 0 2.552 2.823 6.731 2.827Z"/></svg><span class="tool__n">Calendly</span></li>
+        <li class="tool tool--wm"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.502 13.035c-.5 0-.756-.411-.756-.917 0-.505.252-.894.756-.894.513 0 .756.407.756.894-.004.515-.261.917-.756.917Zm-4.888-1.81c.292 0 .414.17.414.317 0 .357-.365.514-1.126.536 0-.442.253-.854.712-.854Zm-3.241 1.81c-.473 0-.67-.384-.67-.917 0-.527.202-.894.67-.894.477 0 .702.38.702.894 0 .537-.234.917-.702.917Zm-3.997-2.334h-.738l1.224 2.808c-.234.519-.36.648-.522.648-.171 0-.333-.138-.45-.259l-.324.43c.22.232.522.366.832.366.387 0 .685-.224.856-.626l1.413-3.371h-.725l-.738 2.012-.828-2.008Zm19.553.523c.36 0 .432.246.432.823v1.516H24v-1.914c0-.689-.473-.988-.91-.988-.386 0-.742.241-.94.688a.901.901 0 0 0-.891-.688c-.365 0-.73.232-.927.666v-.626h-.64v2.857h.64v-1.22c0-.617.324-1.114.765-1.114.36 0 .427.246.427.823v1.516h.64l-.005-1.225c0-.617.329-1.114.77-1.114Zm-5.1-.523h-.324v2.857h.639v-1.095c0-.693.306-1.163.76-1.163.118 0 .217.005.325.05l.099-.676c-.081-.009-.153-.018-.225-.018-.45 0-.774.309-.964.707V10.7h-.31Zm-2.327-.045c-.846 0-1.418.644-1.418 1.458 0 .845.58 1.475 1.418 1.475.85 0 1.431-.648 1.431-1.475-.004-.818-.594-1.458-1.431-1.458Zm-4.852 2.38c-.333 0-.581-.17-.685-.515.847-.036 1.675-.242 1.675-.988 0-.43-.423-.872-1.03-.872-.82 0-1.374.666-1.374 1.457 0 .828.545 1.476 1.36 1.476.567 0 .927-.228 1.21-.559l-.31-.42c-.329.335-.531.42-.846.42Zm-3.151-2.38c-.324 0-.648.188-.774.483v-.438h-.64v3.98h.64v-1.422c.135.205.445.34.72.34.85 0 1.3-.631 1.3-1.48-.004-.841-.445-1.463-1.246-1.463Zm-4.483-1.1H0v.622h1.18v3.38h.67v-3.38h1.166v-.622Zm9.502 1.145h-.383v.572h.383v2.285h.639v-2.285h.621v-.572h-.621v-.447c0-.286.117-.385.382-.385.1 0 .19.027.311.068l.144-.537c-.117-.067-.351-.094-.504-.094-.612 0-.972.367-.972 1.002v.393Z"/></svg><span class="tool__n">Typeform</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></svg><span class="tool__n">Shopify</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/></svg><span class="tool__n">Stripe</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm.642 4.1335c.9554 0 1.7296.776 1.7296 1.7332v9.0667h1.6c1.614 0 2.9275-1.3156 2.9275-2.933 0-1.6173-1.3136-2.9333-2.9276-2.9333h-.6654V7.3334h.6654c2.5722 0 4.6577 2.0897 4.6577 4.667 0 2.5774-2.0855 4.6666-4.6577 4.6666H12.642zM7.9837 7.333h3.3291v12.533c-.9555 0-1.73-.7759-1.73-1.7332V9.0662H7.9837c-1.6146 0-2.9277 1.316-2.9277 2.9334 0 1.6175 1.3131 2.9333 2.9277 2.9333h.6654v1.7332h-.6654c-2.5725 0-4.6577-2.0892-4.6577-4.6665 0-2.5771 2.0852-4.6666 4.6577-4.6666Z"/></svg><span class="tool__n">QuickBooks</span></li>
+        <li class="tool tool--wm"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.585 14.655c-1.485 0-2.69-1.206-2.69-2.689 0-1.485 1.207-2.691 2.69-2.691 1.485 0 2.69 1.207 2.69 2.691s-1.207 2.689-2.69 2.689zM7.53 14.644c-.099 0-.192-.041-.267-.116l-2.043-2.04-2.052 2.047c-.069.068-.16.108-.258.108-.202 0-.368-.166-.368-.368 0-.099.04-.191.111-.263l2.04-2.05-2.038-2.047c-.075-.069-.113-.162-.113-.261 0-.203.166-.366.368-.366.098 0 .188.037.258.105l2.055 2.048 2.048-2.045c.069-.071.162-.108.26-.108.211 0 .375.165.375.366 0 .098-.029.188-.104.258l-2.056 2.055 2.055 2.051c.068.069.104.16.104.258 0 .202-.165.368-.365.368h-.01zm8.017-4.591c-.796.101-.882.476-.882 1.404v2.787c0 .202-.165.366-.366.366-.203 0-.367-.165-.368-.366v-4.53c0-.204.16-.366.362-.366.166 0 .316.125.346.289.27-.209.6-.317.93-.317h.105c.195 0 .359.165.359.368 0 .201-.164.352-.375.359 0 0-.09 0-.164.008l.053-.002zm-3.091 2.205H8.625c0 .019.003.037.006.057.02.105.045.211.083.31.194.531.765 1.275 1.829 1.29.33-.003.631-.086.9-.229.21-.12.391-.271.525-.428.045-.058.09-.112.12-.168.18-.229.405-.186.54-.083.164.135.18.391.045.57l-.016.016c-.21.27-.435.495-.689.66-.255.164-.525.284-.811.345-.33.09-.645.104-.975.06-1.095-.135-2.01-.93-2.28-2.01-.06-.21-.09-.42-.09-.645 0-.855.421-1.695 1.125-2.205.885-.615 2.085-.66 3-.075.63.405 1.035 1.021 1.185 1.771.075.419-.21.794-.734.81l.068-.046zm6.129-2.223c-1.064 0-1.931.865-1.931 1.931 0 1.064.866 1.931 1.931 1.931s1.931-.867 1.931-1.931c0-1.065-.866-1.933-1.931-1.933v.002zm0 2.595c-.367 0-.666-.297-.666-.666 0-.367.3-.665.666-.665.367 0 .667.299.667.665 0 .369-.3.667-.667.666zm-8.04-2.603c-.91 0-1.672.623-1.886 1.466v.03h3.776c-.203-.855-.973-1.494-1.891-1.494v-.002z"/></svg><span class="tool__n">Xero</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.914 2.904V16.29L24 2.905H12.914zM0 2.906C0 5.966 2.483 8.45 5.543 8.45s5.542-2.484 5.543-5.544H0zm11.086 4.807L0 21.096h11.086V7.713zm7.37 7.84c-3.063 0-5.542 2.48-5.542 5.543H24c0-3.06-2.48-5.543-5.543-5.543z"/></svg><span class="tool__n">Zendesk</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 0H3C1.343 0 0 1.343 0 3v18c0 1.658 1.343 3 3 3h18c1.658 0 3-1.342 3-3V3c0-1.657-1.342-3-3-3zm-5.801 4.399c0-.44.36-.8.802-.8.44 0 .8.36.8.8v10.688c0 .442-.36.801-.8.801-.443 0-.802-.359-.802-.801V4.399zM11.2 3.994c0-.44.357-.799.8-.799s.8.359.8.799v11.602c0 .44-.357.8-.8.8s-.8-.36-.8-.8V3.994zm-4 .405c0-.44.359-.8.799-.8.443 0 .802.36.802.8v10.688c0 .442-.36.801-.802.801-.44 0-.799-.359-.799-.801V4.399zM3.199 6c0-.442.36-.8.802-.8.44 0 .799.358.799.8v7.195c0 .441-.359.8-.799.8-.443 0-.802-.36-.802-.8V6zM20.52 18.202c-.123.105-3.086 2.593-8.52 2.593-5.433 0-8.397-2.486-8.521-2.593-.335-.288-.375-.792-.086-1.128.285-.334.79-.375 1.125-.09.047.041 2.693 2.211 7.481 2.211 4.848 0 7.456-2.186 7.479-2.207.334-.289.839-.25 1.128.086.289.336.25.84-.086 1.128zm.281-5.007c0 .441-.36.8-.801.8-.441 0-.801-.36-.801-.8V6c0-.442.361-.8.801-.8.441 0 .801.357.801.8v7.195z"/></svg><span class="tool__n">Intercom</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.78 12.653c-2.882 0-5.22 2.336-5.22 5.22s2.338 5.22 5.22 5.22 5.22-2.34 5.22-5.22-2.336-5.22-5.22-5.22zm-13.56 0c-2.88 0-5.22 2.337-5.22 5.22s2.338 5.22 5.22 5.22 5.22-2.338 5.22-5.22-2.336-5.22-5.22-5.22zm12-6.525c0 2.883-2.337 5.22-5.22 5.22-2.882 0-5.22-2.337-5.22-5.22 0-2.88 2.338-5.22 5.22-5.22 2.883 0 5.22 2.34 5.22 5.22z"/></svg><span class="tool__n">Asana</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18.439l3.69-2.828c1.961 2.56 4.044 3.739 6.363 3.739 2.307 0 4.33-1.166 6.203-3.704L22 18.405C19.298 22.065 15.941 24 12.053 24 8.178 24 4.788 22.078 2 18.439zM12.04 6.15l-6.568 5.66-3.036-3.52L12.055 0l9.543 8.296-3.05 3.509z"/></svg><span class="tool__n">ClickUp</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.267 0C6.791-.015-1.82 10.246 1.397 12.964l.79.669a3.88 3.88 0 0 0-.22 1.792c.084.84.518 1.644 1.22 2.266.666.59 1.542.964 2.392.964 1.406 3.24 4.62 5.228 8.386 5.34 4.04.12 7.433-1.776 8.854-5.182.093-.24.488-1.316.488-2.267 0-.956-.54-1.352-.885-1.352-.01-.037-.078-.286-.172-.586-.093-.3-.19-.51-.19-.51.375-.563.382-1.065.332-1.35-.053-.353-.2-.653-.496-.964-.296-.311-.902-.63-1.753-.868l-.446-.124c-.002-.019-.024-1.053-.043-1.497-.014-.32-.042-.822-.197-1.315-.186-.668-.508-1.253-.911-1.627 1.112-1.152 1.806-2.422 1.804-3.511-.003-2.095-2.576-2.729-5.746-1.416l-.672.285A678.22 678.22 0 0 0 12.7.504C12.304.159 11.817.002 11.267 0zm.073.873c.166 0 .322.019.465.058.297.084 1.28 1.224 1.28 1.224s-1.826 1.013-3.52 2.426c-2.28 1.757-4.005 4.311-5.037 7.082-.811.158-1.526.618-1.963 1.253-.261-.218-.748-.64-.834-.804-.698-1.326.761-3.902 1.781-5.357C5.834 3.44 9.37.867 11.34.873zm3.286 3.273c.04-.002.06.05.028.074-.143.11-.299.26-.413.414a.04.04 0 0 0 .031.064c.659.004 1.587.235 2.192.574.041.023.012.103-.034.092-.915-.21-2.414-.369-3.97.01-1.39.34-2.45.863-3.224 1.426-.04.028-.086-.023-.055-.06.896-1.035 1.999-1.935 2.987-2.44.034-.018.07.019.052.052-.079.143-.23.447-.278.678-.007.035.032.063.062.042.615-.42 1.684-.868 2.622-.926zm3.023 3.205l.056.001a.896.896 0 0 1 .456.146c.534.355.61 1.216.638 1.845.015.36.059 1.229.074 1.478.034.571.184.651.487.751.17.057.33.098.563.164.706.198 1.125.4 1.39.658.157.162.23.333.253.497.083.608-.472 1.36-1.942 2.041-1.607.746-3.557.935-4.904.785l-.471-.053c-1.078-.145-1.693 1.247-1.046 2.201.417.615 1.552 1.015 2.688 1.015 2.604 0 4.605-1.111 5.35-2.072a.987.987 0 0 0 .06-.085c.036-.055.006-.085-.04-.054-.608.416-3.31 2.069-6.2 1.571 0 0-.351-.057-.672-.182-.255-.1-.788-.344-.853-.891 2.333.72 3.801.039 3.801.039a.072.072 0 0 0 .042-.072.067.067 0 0 0-.074-.06s-1.911.283-3.718-.378c.197-.64.72-.408 1.51-.345a11.045 11.045 0 0 0 3.647-.394c.818-.234 1.892-.697 2.727-1.356.281.618.38 1.299.38 1.299s.219-.04.4.073c.173.106.299.326.213.895-.176 1.063-.628 1.926-1.387 2.72a5.714 5.714 0 0 1-1.666 1.244c-.34.18-.704.334-1.087.46-2.863.935-5.794-.093-6.739-2.3a3.545 3.545 0 0 1-.189-.522c-.403-1.455-.06-3.2 1.008-4.299.065-.07.132-.153.132-.256 0-.087-.055-.179-.102-.243-.374-.543-1.669-1.466-1.409-3.254.187-1.284 1.31-2.189 2.357-2.135.089.004.177.01.266.015.453.027.85.085 1.223.1.625.028 1.187-.063 1.853-.618.225-.187.405-.35.71-.401.028-.005.092-.028.215-.028zm.022 2.18a.42.42 0 0 0-.06.005c-.335.054-.347.468-.228 1.04.068.32.187.595.32.765.175-.02.343-.022.498 0 .089-.205.104-.557.024-.942-.112-.535-.261-.872-.554-.868zm-3.66 1.546a1.724 1.724 0 0 0-1.016.326c-.16.117-.311.28-.29.378.008.032.031.056.088.063.131.015.592-.217 1.122-.25.374-.023.684.094.923.2.239.104.386.173.443.113.037-.038.026-.11-.031-.204-.118-.192-.36-.387-.618-.497a1.601 1.601 0 0 0-.621-.129zm4.082.81c-.171-.003-.313.186-.317.42-.004.236.131.43.303.432.172.003.314-.185.318-.42.004-.236-.132-.429-.304-.432zm-3.58.172c-.05 0-.102.002-.155.008-.311.05-.483.152-.593.247-.094.082-.152.173-.152.237a.075.075 0 0 0 .075.076c.07 0 .228-.063.228-.063a1.98 1.98 0 0 1 1.001-.104c.157.018.23.027.265-.026.01-.016.022-.049-.01-.1-.063-.103-.311-.269-.66-.275zm2.26.4c-.127 0-.235.051-.283.148-.075.154.035.363.246.466.21.104.443.063.52-.09.075-.155-.035-.364-.246-.467a.542.542 0 0 0-.237-.058zm-11.635.024c.048 0 .098 0 .149.003.73.04 1.806.6 2.052 2.19.217 1.41-.128 2.843-1.449 3.069-.123.02-.248.029-.374.026-1.22-.033-2.539-1.132-2.67-2.435-.145-1.44.591-2.548 1.894-2.811.117-.024.252-.04.398-.042zm-.07.927a1.144 1.144 0 0 0-.847.364c-.38.418-.439.988-.366 1.19.027.073.07.094.1.098.064.008.16-.039.22-.2a1.2 1.2 0 0 0 .017-.052 1.58 1.58 0 0 1 .157-.37.689.689 0 0 1 .955-.199c.266.174.369.5.255.81-.058.161-.154.469-.133.721.043.511.357.717.64.738.274.01.466-.143.515-.256.029-.067.005-.107-.011-.125-.043-.053-.113-.037-.18-.021a.638.638 0 0 1-.16.022.347.347 0 0 1-.294-.148c-.078-.12-.073-.3.013-.504.011-.028.025-.058.04-.092.138-.308.368-.825.11-1.317-.195-.37-.513-.602-.894-.65a1.135 1.135 0 0 0-.138-.01z"/></svg><span class="tool__n">Mailchimp</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span class="tool__n">WhatsApp</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg><span class="tool__n">Anthropic</span></li>
+        <li class="tool"><span class="tool__mono" aria-hidden="true">Op</span><span class="tool__n">OpenAI</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg><span class="tool__n">Supabase</span></li>
+        <li class="tool"><svg class="tool__i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.84 2.9982v17.9987c.0086 1.6473-1.3197 2.9897-2.967 2.9984a2.9808 2.9808 0 01-.3677-.0208c-1.528-.226-2.6477-1.5558-2.6105-3.1V3.1204c-.0369-1.5458 1.0856-2.8762 2.6157-3.1 1.6361-.1915 3.1178.9796 3.3093 2.6158.014.1201.0208.241.0202.3619zM4.1326 18.0548c-1.6417 0-2.9726 1.331-2.9726 2.9726C1.16 22.6691 2.4909 24 4.1326 24s2.9726-1.3309 2.9726-2.9726-1.331-2.9726-2.9726-2.9726zm7.8728-9.0098c-.0171 0-.0342 0-.0513.0003-1.6495.0904-2.9293 1.474-2.891 3.1256v7.9846c0 2.167.9535 3.4825 2.3505 3.763 1.6118.3266 3.1832-.7152 3.5098-2.327.04-.1974.06-.3983.0593-.5998v-8.9585c.003-1.6474-1.33-2.9852-2.9773-2.9882z"/></svg><span class="tool__n">Google Analytics</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ automatizaciones destacadas ============ -->
+  <section class="section" id="automations">
+    <p class="eyebrow eyebrow--center reveal">AUTOMATIZACIONES DESTACADAS</p>
+    <h2 class="statement reveal">Flujos reales, funcionando ahora mismo.</h2>
+    <p class="lede reveal">Algunos de los sistemas que construimos más a menudo. Cada uno se adapta a tus herramientas, tus datos y la forma de trabajar de tu equipo.</p>
+
+    <div class="cards cards--3">
+      <article class="panel wf reveal">
+        <header class="wf__head">
+          <span class="wf__tag">VENTAS</span>
+          <span class="wf__live"><span class="flow__dot"></span>Activo</span>
+        </header>
+        <h3>Motor de lead a reunión</h3>
+        <ol class="wf__list">
+          <li>Entra un lead desde tu web</li>
+          <li>La IA lo cualifica y lo puntúa</li>
+          <li>Se crea y enriquece el registro en el CRM</li>
+          <li>Se avisa al equipo comercial en Slack</li>
+          <li>La propuesta se genera automáticamente</li>
+          <li>La reunión queda agendada</li>
+        </ol>
+        <p class="wf__metric">Tiempo de respuesta: 4 horas &rarr; 90 segundos</p>
+      </article>
+
+      <article class="panel wf reveal">
+        <header class="wf__head">
+          <span class="wf__tag">ATENCIÓN AL CLIENTE</span>
+          <span class="wf__live"><span class="flow__dot"></span>Activo</span>
+        </header>
+        <h3>Piloto automático de soporte</h3>
+        <ol class="wf__list">
+          <li>Llega un ticket a la cola</li>
+          <li>La IA redacta una respuesta desde tu documentación</li>
+          <li>Se etiquetan prioridad y sentimiento</li>
+          <li>Se enruta al especialista adecuado</li>
+          <li>La respuesta aprobada sale en minutos</li>
+          <li>Se lanza la encuesta de satisfacción</li>
+        </ol>
+        <p class="wf__metric">Primera respuesta: un 92 % más rápida</p>
+      </article>
+
+      <article class="panel wf reveal">
+        <header class="wf__head">
+          <span class="wf__tag">OPERACIONES</span>
+          <span class="wf__live"><span class="flow__dot"></span>Activo</span>
+        </header>
+        <h3>Informes sobre rieles</h3>
+        <ol class="wf__list">
+          <li>Se sincronizan los datos de cada herramienta</li>
+          <li>La IA limpia y reconcilia registros</li>
+          <li>Los KPIs se calculan automáticamente</li>
+          <li>Los cuadros de mando se actualizan en directo</li>
+          <li>El resumen semanal llega a dirección</li>
+          <li>Las anomalías se detectan antes de doler</li>
+        </ol>
+        <p class="wf__metric">Informes: 2 días &rarr; 0 horas de trabajo manual</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ sectores ============ -->
+  <section class="section" id="industries">
+    <p class="eyebrow eyebrow--center reveal">SECTORES</p>
+    <h2 class="statement reveal">Hecho para cómo funciona de verdad tu sector.</h2>
+    <p class="lede reveal">Sectores distintos, la misma historia: demasiado trabajo manual entre las herramientas. Hemos automatizado operaciones en todos estos.</p>
+
+    <div class="grid grid--tight">
+      <article class="panel mini reveal"><h3>Agencias</h3><p>Informes de cliente, onboarding, operaciones de proyecto</p></article>
+      <article class="panel mini reveal"><h3>Sanidad</h3><p>Admisión, citas, gestión de historiales</p></article>
+      <article class="panel mini reveal"><h3>Finanzas</h3><p>Conciliación, cumplimiento, informes</p></article>
+      <article class="panel mini reveal"><h3>Legal</h3><p>Redacción de documentos, admisión, gestión de expedientes</p></article>
+      <article class="panel mini reveal"><h3>Ecommerce</h3><p>Pedidos, inventario, atención al cliente</p></article>
+      <article class="panel mini reveal"><h3>Construcción</h3><p>Licitaciones, permisos, coordinación de subcontratas</p></article>
+      <article class="panel mini reveal"><h3>Industria</h3><p>Compras, registros de calidad, cadena de suministro</p></article>
+      <article class="panel mini reveal"><h3>SaaS</h3><p>Enrutado de leads, onboarding, señales de churn</p></article>
+    </div>
+  </section>
+
+  <!-- ============ casos de éxito ============ -->
+  <section class="section" id="case-studies">
+    <p class="eyebrow eyebrow--center reveal">CASOS DE ÉXITO</p>
+    <h2 class="statement reveal">Resultados reales de negocios reales.</h2>
+    <p class="lede reveal">Medimos todo lo que construimos. Esto es lo que significa en la práctica.</p>
+
+    <div class="cards cards--3">
+      <article class="panel cs reveal">
+        <span class="cs__tag">ECOMMERCE</span>
+        <h3>Operativa de pedidos, totalmente automatizada</h3>
+        <p class="cs__desc">Una marca de ecommerce de ocho cifras se ahogaba en ediciones manuales de pedidos, devoluciones y excepciones de transportista. Automatizamos todo el flujo del back office.</p>
+        <p class="cs__big"><span class="count" data-count="340">340</span></p>
+        <p class="cs__unit">horas ahorradas al mes</p>
+        <p class="cs__note">Un 78 % menos de trabajo administrativo para el equipo de operaciones</p>
+      </article>
+
+      <article class="panel cs reveal">
+        <span class="cs__tag">SAAS B2B</span>
+        <h3>Cualificación de leads que no duerme</h3>
+        <p class="cs__desc">Los SDR de una empresa SaaS pasaban las mañanas filtrando leads a mano. Nuestro motor de cualificación con IA ahora puntúa, enriquece y enruta cada lead al instante.</p>
+        <p class="cs__big"><span class="count" data-count="35" data-suffix=" %">35 %</span></p>
+        <p class="cs__unit">más demos agendadas</p>
+        <p class="cs__note">Tiempo de respuesta reducido de 5 horas a menos de 2 minutos</p>
+      </article>
+
+      <article class="panel cs reveal">
+        <span class="cs__tag">AGENCIA</span>
+        <h3>Informes de cliente en piloto automático</h3>
+        <p class="cs__desc">Una agencia de marketing de 40 personas hacía cada informe de cliente a mano. Conectamos sus herramientas y automatizamos los informes de principio a fin.</p>
+        <p class="cs__big"><span class="count" data-prefix="$" data-count="120" data-suffix="k">$120k</span></p>
+        <p class="cs__unit">ahorrados al año</p>
+        <p class="cs__note">15 horas recuperadas por account manager cada mes</p>
+      </article>
+    </div>
+
+    <p class="eyebrow eyebrow--center reveal" style="margin-top:clamp(48px,7vw,90px)">TESTIMONIOS</p>
+    <h2 class="statement statement--sm reveal">Equipos que recuperaron su tiempo.</h2>
+
+    <figure class="panel quote reveal">
+      <blockquote>&laquo;Nitidflow transformó nuestra forma de trabajar. Su equipo entendió nuestros procesos en una sola llamada y entregó automatizaciones que nos ahorran decenas de horas cada semana. Es el mejor dinero que hemos invertido en operaciones.&raquo;</blockquote>
+      <figcaption>
+        <span class="quote__av" aria-hidden="true">DL</span>
+        <span class="quote__who"><strong>David Lee</strong>COO, Scaleup</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq">
+    <p class="eyebrow eyebrow--center reveal">PREGUNTAS FRECUENTES</p>
+    <h2 class="statement reveal">Preguntas, respondidas con honestidad.</h2>
+    <p class="lede reveal">Todo lo que los equipos suelen preguntar antes de reservar una auditoría. ¿Tienes otra duda? Escríbenos a <a href="mailto:hello@nitidflow.com">hello@nitidflow.com</a>.</p>
+
+    <div class="faq" data-faq>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-0">¿Qué pasa en la auditoría de automatización gratuita?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-0" hidden><p>Una llamada de 30 minutos en la que repasamos cómo fluye el trabajo en tu negocio. Identificamos dónde se están perdiendo horas, estimamos el ROI de arreglarlo y te damos una lista priorizada de oportunidades de automatización. Las conclusiones son tuyas, trabajemos juntos o no.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1">¿Cuánto tarda la implementación?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-1" hidden><p>La mayoría de las primeras automatizaciones se entregan en 2&ndash;4 semanas. Las reformas operativas más grandes llevan de 6 a 10 semanas, desplegadas por fases para que veas valor pronto. No hacemos proyectos de seis meses que entregan todo al final.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-2">¿Con qué herramientas trabajáis?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-2" hidden><p>Con casi cualquier cosa que tenga API: HubSpot, Salesforce, Slack, Gmail, Notion, Airtable, Shopify, QuickBooks, Zendesk y cientos más. Si una herramienta no tiene conector, lo construimos. No necesitas cambiar tu stack para trabajar con nosotros.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-3">¿Necesitamos personal técnico por nuestra parte?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-3" hidden><p>No. Nosotros nos encargamos del diseño, la construcción, la integración y el mantenimiento. Lo que necesitamos de ti es alguien que sepa cómo se hace el trabajo en realidad &mdash; normalmente un responsable de operaciones o de equipo &mdash; durante unas horas en la fase de descubrimiento.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-4">¿Cuánto cuesta?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-4" hidden><p>Los proyectos suelen partir del coste de una contratación a tiempo parcial y se presupuestan después de la auditoría, cuando ya sabemos el ROI al que apuntamos. Solo recomendamos automatizaciones en las que el ahorro supere claramente la inversión &mdash; y te enseñamos ese cálculo por adelantado.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-5">¿Se romperán las automatizaciones cuando se actualicen nuestras herramientas?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-5" hidden><p>Precisamente para eso ofrecemos optimización continua. Monitorizamos cada flujo, recibimos el aviso antes de que tu equipo note el problema y adaptamos las automatizaciones a medida que evolucionan tus herramientas y procesos. La mayoría de los clientes nos mantiene con una cuota ligera de mantenimiento.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-6">¿De quién son las automatizaciones que construís?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-6" hidden><p>Tuyas. Todo lo que construimos vive en tus cuentas, queda documentado y es tuyo para quedártelo. Sin ataduras ni infraestructura secuestrada. Si nos separamos, te quedas con todos los flujos funcionando.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-7">¿Están seguros nuestros datos?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-7" hidden><p>Sí. Trabajamos dentro de tus herramientas y permisos actuales, aplicamos el principio de mínimo acceso, firmamos NDA y contratos de encargado de tratamiento de serie, y nunca usamos los datos de tu negocio para entrenar modelos. Los flujos sensibles se pueden diseñar para que los datos no salgan de tu infraestructura.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-8">¿Y si nuestros procesos cambian?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-8" hidden><p>Van a cambiar, y las automatizaciones deben seguir el ritmo. Nuestra cuota de optimización cubre ajustar los flujos a medida que tu negocio evoluciona. Una automatización bien diseñada es modular, así que cambiar un paso no significa reconstruir el sistema.</p></div>
+      </div>
+      <div class="panel faq__item reveal">
+        <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-9">¿Esto va a sustituir a nuestros empleados?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+        <div class="faq__a" id="faq-9" hidden><p>No es el objetivo, y no es lo que pasa en la práctica. La automatización se lleva el 30 % repetitivo del trabajo de cada persona: el copiar y pegar, el meter datos, el ir detrás de la gente. Tu equipo recupera ese tiempo para el trabajo que de verdad exige criterio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ reservar auditoría ============ -->
+  <section class="section section--contact" id="book-audit">
+    <div class="panel contact">
+      <div class="contact__copy">
+        <p class="eyebrow">AUDITORÍA DE AUTOMATIZACIÓN GRATUITA</p>
+        <h2>¿Listo para automatizar tu negocio?</h2>
+        <p class="contact__lede">Reserva hoy tu auditoría de automatización gratuita. En 30 minutos te enseñamos exactamente dónde está perdiendo tiempo tu negocio &mdash; y cuánto vale recuperarlo.</p>
+
+        <ul class="ticks">
+          <li>Sin compromiso</li>
+          <li>Llamada de 30 minutos</li>
+          <li>Conclusiones a medida</li>
+        </ul>
+
+        <a class="sched" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
+           data-cal-link="smnitidflow" data-cal-namespace="audit">
+          <p class="sched__url">cal.com/smnitidflow</p>
+          <p class="sched__title">Auditoría de automatización gratuita</p>
+          <p class="sched__meta">30 min &middot; Videollamada</p>
+          <!-- Solo ilustrativos: la disponibilidad real se carga dentro del
+               calendario, así que se ocultan a los lectores de pantalla en vez
+               de anunciarse como si fueran huecos reservables. -->
+          <ul class="sched__slots" aria-hidden="true">
+            <li>Lun 10:00</li><li>Lun 14:00</li><li>Mar 9:00</li>
+            <li>Mar 11:00</li><li>Mié 15:00</li><li>Jue 10:00</li>
+          </ul>
+          <p class="sched__note">Abre el calendario &mdash; disponibilidad real, reservado en dos clics.</p>
+        </a>
+      </div>
+
+      <!-- Netlify Forms: las respuestas aparecen en el panel de Netlify, sin backend -->
+      <form action='/es/gracias' class='form' method='POST' name='audit'>
+        <input type="hidden" name="form-name" value="audit">
+        <input type="hidden" name="language" value="es">
+        <p class="hidden"><label>No rellenes esto: <input name="bot-field"></label></p>
+
+        <div class="form__row">
+          <label for="cf-name">Nombre</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form__row">
+          <label for="cf-email">Email de trabajo</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form__row">
+          <label for="cf-company">Empresa</label>
+          <input id="cf-company" name="company" type="text" autocomplete="organization">
+        </div>
+        <div class="form__row">
+          <label for="cf-msg">¿Qué te encantaría automatizar?</label>
+          <textarea id="cf-msg" name="message" rows="4" required></textarea>
+        </div>
+
+        <button class="btn btn--solid" type="submit">Solicitar mi auditoría gratuita</button>
+        <p class="form__note">Respondemos en un día laborable. Sin spam ni secuencias de venta.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ pie ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="logoclip logoclip--sm"><img src="/assets/logo.png" alt="Nitidflow"></span>
+      <p>Automatizamos el trabajo que ralentiza tu negocio. Automatizaciones con IA llave en mano que ahorran tiempo, reducen costes y escalan contigo.</p>
+    </div>
+
+    <nav class="footer__col" aria-label="Servicios">
+      <h2>SERVICIOS</h2>
+      <ul>
+        <li><a href="#services">Automatización de flujos</a></li>
+        <li><a href="#services">Agentes de IA</a></li>
+        <li><a href="#services">Automatización de CRM</a></li>
+        <li><a href="#services">Integraciones</a></li>
+        <li><a href="#services">Informes y cuadros de mando</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer__col" aria-label="Empresa">
+      <h2>EMPRESA</h2>
+      <ul>
+        <li><a href="#solution">Sobre nosotros</a></li>
+        <li><a href="#case-studies">Casos de éxito</a></li>
+        <li><a href="#book-audit">Empleo</a></li>
+        <li><a href="#book-audit">Blog</a></li>
+        <li><a href="#book-audit">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer__col" aria-label="Recursos">
+      <h2>RECURSOS</h2>
+      <ul>
+        <li><a href="#how-it-works">Guías de automatización</a></li>
+        <li><a href="#book-audit">Calculadora de ROI</a></li>
+        <li><a href="#services">Comparativas de herramientas</a></li>
+        <li><a href="#faq">Centro de ayuda</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__col footer__news">
+      <h2>MANTENTE AL DÍA</h2>
+      <p>Ideas prácticas de automatización para quienes operan. Mensual, breve y útil.</p>
+      <form action='/es/gracias' class='news' method='POST' name='newsletter'>
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="hidden" name="language" value="es">
+        <p class="hidden"><label>Omitir: <input name="bot-field-news"></label></p>
+        <label class="sr" for="news-email">Correo electrónico</label>
+        <input id="news-email" name="email" type="email" placeholder="Correo electrónico" autocomplete="email" required>
+        <button class="btn btn--sm btn--solid" type="submit">Unirme</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer__legal">
+    <p>&copy; <span id="year">2026</span> Nitidflow. Todos los derechos reservados.</p>
+    <p class="footer__links">
+      <a href="#faq">Política de privacidad</a>
+      <a href="#faq">Términos del servicio</a>
+      <a href="mailto:hello@nitidflow.com">hello@nitidflow.com</a>
+    </p>
+  </div>
+</footer>
+
+<script src="/js/vendor/gsap.min.js"></script>
+<script src="/js/vendor/ScrollTrigger.min.js"></script>
+<script src="/js/main.js?v=20260817" defer></script>
+<script src="/js/silk.js?v=20260817" defer></script>
+<script src="/js/cal.js?v=20260817" defer></script>
+<script src="/js/forms.js?v=20260817" defer></script>
+</body>
+</html>

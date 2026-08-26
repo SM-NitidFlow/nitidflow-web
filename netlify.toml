@@ -1,8 +1,7 @@
+# Sitio estático: no hay build, se publica la raíz tal cual.
 [build]
-  command = "npm run build"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  publish = "."
+  command = ""
 
 [[headers]]
   for = "/*"
@@ -11,3 +10,9 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Los assets llevan ?v=fecha en el HTML, así que pueden cachearse fuerte.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
