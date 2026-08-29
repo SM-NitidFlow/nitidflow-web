@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentes de IA para empresas | NitidFlow Madrid</title>
+<meta name="description" content="Diseñamos agentes de IA que consultan tus sistemas, deciden y ejecutan acciones reales. Agencia en Madrid, auditoría gratuita.">
+<link rel="canonical" href="https://nitidflow.com/es/agentes-ia/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Agentes de IA para empresas | NitidFlow Madrid">
+<meta property="og:description" content="Diseñamos agentes de IA que consultan tus sistemas, deciden y ejecutan acciones reales. Agencia en Madrid, auditoría gratuita.">
+<meta property="og:url" content="https://nitidflow.com/es/agentes-ia/">
+<meta property="og:image" content="https://nitidflow.com/assets/og.jpg?v=20260914">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nitidflow.com/assets/og.jpg?v=20260914">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon-32.png?v=20260914" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260914">
+<meta name="theme-color" content="#071522">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/assets/background-poster.webp" type="image/webp">
+<link rel="stylesheet" href="/css/styles.css?v=20260914">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Service",
+   "@id": "https://nitidflow.com/es/agentes-ia/#service",
+   "name": "Diseño e implementación de agentes de IA",
+   "description": "Diseñamos agentes de IA que consultan tus sistemas, deciden y ejecutan acciones reales. Agencia en Madrid, auditoría gratuita.",
+   "serviceType": "Diseño e implementación de agentes de IA",
+   "provider": {
+    "@id": "https://nitidflow.com/#org"
+   },
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "Madrid"
+    },
+    {
+     "@type": "Country",
+     "name": "España"
+    }
+   ],
+   "audience": {
+    "@type": "BusinessAudience",
+    "name": "Pymes y empresas"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://nitidflow.com/es/agentes-ia/#page",
+   "url": "https://nitidflow.com/es/agentes-ia/",
+   "name": "Agentes de IA para empresas | NitidFlow Madrid",
+   "description": "Diseñamos agentes de IA que consultan tus sistemas, deciden y ejecutan acciones reales. Agencia en Madrid, auditoría gratuita.",
+   "isPartOf": {
+    "@id": "https://nitidflow.com/#web"
+   },
+   "about": {
+    "@id": "https://nitidflow.com/es/agentes-ia/#service"
+   },
+   "inLanguage": "es-ES"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://nitidflow.com/es/agentes-ia/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Inicio",
+     "item": "https://nitidflow.com/es/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Agentes de IA para empresas",
+     "item": "https://nitidflow.com/es/agentes-ia/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://nitidflow.com/es/agentes-ia/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Qué diferencia real hay entre un chatbot y un agente de IA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "El alcance de lo que puede hacer. Un chatbot produce texto. Un agente tiene herramientas conectadas y puede consultar, crear y modificar registros en tus sistemas. La consecuencia práctica es que un chatbot mal hecho da una respuesta mala, y un agente mal hecho ejecuta una acción mala: por eso el diseño de límites importa más que el modelo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuánta autonomía se le da?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La mínima que resuelva el caso. Lo habitual es que las lecturas y consultas sean libres, las escrituras estén acotadas a operaciones concretas, y las acciones sensibles — enviar una propuesta, emitir una factura, cerrar una incidencia — requieran validación o cumplan una regla explícita."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Se puede saber por qué el agente hizo algo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí, si se ha construido para eso. Cada ejecución debe registrar la entrada, las consultas hechas, la decisión tomada y la acción ejecutada. Sin ese registro no hay forma de depurar un fallo ni de explicar una decisión a un cliente."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué modelo de IA usáis?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depende de la tarea, y no es una decisión definitiva. Interpretar un email corto y razonar sobre un expediente complejo no piden lo mismo. El sistema se construye para poder cambiar de modelo sin rehacer el flujo, porque en este terreno lo que hoy es la mejor opción en seis meses puede no serlo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿El agente aprende de nuestros datos?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Consulta vuestros datos en el momento de responder, que es distinto de entrenar un modelo con ellos. Lo primero es lo que hace falta casi siempre y es reversible; lo segundo rara vez se justifica en una pyme y trae consigo un problema de privacidad y de mantenimiento."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuánto tarda en estar en producción?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Un agente con un objetivo estrecho y sistemas con API suele medirse en semanas. Lo que alarga los plazos casi nunca es la IA: son los accesos, los permisos y descubrir que el proceso real no era el que estaba documentado."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#top">Saltar al contenido</a>
+
+<div class="bg" aria-hidden="true">
+  <div class="bg__media"
+       data-silk
+       data-colors="#3d7ba8,#cfe2f0,#f4f1ec"
+       data-bg="#071522"
+       data-speed="0.35"
+       data-layers="4"
+       data-amplitude="0.3"
+       data-frequency="2"
+       data-angle="-12"
+       data-softness="0.6"
+       data-sheen="0.6"
+       data-grain="0.04"></div>
+  <div class="bg__scrim"></div>
+  <div class="bg__vignette"></div>
+</div>
+
+<!-- ============ menú superior transparente ============ -->
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Nitidflow — inicio">
+      <span class="logoclip logoclip--sm"><img src="/assets/logo.png?v=20260911" alt="Nitidflow" width="660" height="130"></span>
+    </a>
+
+    <nav class="nav__links" id="nav-links" aria-label="Principal">
+      <a href="#services">Servicios</a>
+      <a href="#how-it-works">Cómo funciona</a>
+      <a href="#automations">Automatizaciones</a>
+      <a href="#case-studies">Casos de éxito</a>
+      <a href="#faq">FAQ</a>
+      <span class="lang" role="group" aria-label="Idioma">
+        <a href="/?lang=en" data-lang="en" hreflang="en">EN</a>
+        <span class="lang__on" aria-current="true">ES</span>
+      </span>
+      <a class="btn btn--solid btn--sm nav__cta" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
+         data-cal-link="smnitidflow" data-cal-namespace="audit">Auditoría gratuita</a>
+    </nav>
+
+    <button class="nav__toggle" id="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+      <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="section ld__hero">
+    <nav class="crumb reveal" aria-label="Miga de pan">
+      <a href="/es/">Inicio</a><span aria-hidden="true">/</span><span>Agentes de IA para empresas</span>
+    </nav>
+    <p class="eyebrow eyebrow--center reveal">AGENTES DE IA</p>
+    <h1 class="statement reveal">Agentes de IA para empresas</h1>
+    <p class="lede reveal">Agentes que entienden información, toman decisiones y ejecutan acciones. La diferencia con un chatbot no es la conversación: es que al final del proceso ha cambiado algo en tus sistemas.</p>
+    <p class="ld__cta reveal">
+      <a class="btn btn--solid" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
+         data-cal-link="smnitidflow" data-cal-namespace="audit">Reserva una auditoría gratuita</a>
+    </p>
+  </section>
+
+  <section class="section ld__body">
+      <div class="ld__block reveal">
+        <h2>Un chatbot responde. Un agente termina el trabajo.</h2>
+        <p>La mayoría de proyectos de «IA en la empresa» acaban en un chat que contesta preguntas. Funciona una temporada y luego se abandona, porque responder no era el problema: el problema era que después de responder alguien tenía que abrir el CRM, crear el contacto, apuntar lo hablado y agendar la llamada.</p>
+        <p>Un agente se diseña al revés. Parte de la acción que hay que ejecutar y de las herramientas donde ejecutarla, y la conversación es solo la entrada. Puede consultar información real en tus sistemas, decidir entre varias salidas posibles y dejar registro de lo que ha hecho.</p>
+        <p>Eso también significa que un agente se equivoca de otra manera: no da una respuesta pobre, ejecuta una acción incorrecta. Por eso lo que importa al diseñarlo son los límites, no la autonomía.</p>
+      </div>
+
+      <div class="ld__block reveal">
+        <h2>Señales de que te hace falta</h2>
+        <p>Ya tenéis un chatbot y nadie lo usa</p>
+        <p>Alguien transcribe a mano lo que se habla con el cliente</p>
+        <p>Las consultas exigen mirar en dos o tres sistemas distintos</p>
+        <p>El seguimiento depende de que alguien se acuerde</p>
+        <p>Hay reglas que cambian según el caso y no caben en un formulario</p>
+        <p>El equipo pasa más tiempo registrando que atendiendo</p>
+      </div>
+
+      <div class="ld__block reveal">
+        <h2>Tres agentes que cubren la mayoría de casos.</h2>
+        <p>No hacen falta veinte agentes. Casi todo el trabajo repetitivo de una pyme cae en uno de estos tres perfiles.</p>
+        <p><strong>Agente de ventas</strong> Recibe el lead, lo interpreta, lo cualifica con tus criterios, actualiza el CRM y arranca el seguimiento.</p>
+        <p><strong>Agente de atención</strong> Atiende la conversación, consulta el estado real del pedido o del expediente y escala cuando el caso lo pide.</p>
+        <p><strong>Agente de operaciones</strong> Convierte documentos y correos en datos estructurados, los valida y los escribe donde corresponde.</p>
+        <p><strong>Agente de cualificación</strong> Ordena una entrada masiva de solicitudes según prioridad real, no según orden de llegada.</p>
+        <p><strong>Agente de seguimiento</strong> Retoma conversaciones paradas con el contexto de lo que ya se habló, sin repetir el mismo mensaje.</p>
+        <p><strong>Agente de reporting</strong> Recoge datos de varios sistemas y redacta el informe recurrente con el mismo criterio cada vez.</p>
+      </div>
+
+      <div class="ld__block reveal">
+        <h2>Cómo se construye un agente que no se descontrola.</h2>
+        <p>Un agente útil no es el que puede hacer de todo, sino el que tiene un objetivo estrecho, herramientas concretas y un límite claro de dónde para.</p>
+        <p><strong>Un objetivo, no una personalidad</strong> El agente existe para cerrar un proceso concreto. Cuanto más estrecho el objetivo, más fiable el resultado.</p>
+        <p><strong>Herramientas explícitas</strong> Solo puede hacer lo que le hemos dado: consultar el CRM, crear un contacto, agendar. Nada más.</p>
+        <p><strong>Un punto de parada</strong> Casos fuera de guion, importes altos o clientes sensibles se derivan a una persona por diseño, no por excepción.</p>
+        <p><strong>Registro de cada paso</strong> Qué consultó, qué decidió y qué ejecutó. Sin traza no se puede depurar ni defender una decisión.</p>
+      </div>
+
+      <div class="ld__block reveal">
+        <h2>Qué gana el equipo.</h2>
+        <p><strong>El registro deja de ser trabajo</strong> Lo que se habla queda apuntado sin que nadie lo transcriba después, que es cuando se pierde.</p>
+        <p><strong>Las consultas se resuelven con datos reales</strong> El agente mira el sistema antes de contestar, en lugar de improvisar sobre un texto genérico.</p>
+        <p><strong>El caso difícil llega antes a una persona</strong> Bien diseñado, un agente no intenta resolver lo que no puede: lo detecta y lo pasa con contexto.</p>
+        <p><strong>El criterio queda escrito</strong> Cualificar un lead deja de depender de quién lo lea. Las reglas están en un sitio y se pueden discutir.</p>
+      </div>
+
+      <div class="ld__block reveal">
+        <h2>Qué no le pedimos a un agente</h2>
+        <p>Negociar precios o condiciones comerciales</p>
+        <p>Tomar decisiones con consecuencia legal o económica sin validación</p>
+        <p>Sustituir la conversación cuando el cliente está enfadado</p>
+        <p>Operar sobre sistemas sin API mediante automatización del navegador</p>
+        <p>Inventar información que no está en vuestros datos</p>
+      </div>
+  </section>
+
+  <section class="section" id="faq">
+    <p class="eyebrow eyebrow--center reveal">PREGUNTAS FRECUENTES</p>
+    <h2 class="statement reveal">Preguntas sobre agentes de ia</h2>
+    <div class="faq" data-faq>
+        <div class="panel faq__item reveal">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="lfaq-0">¿Qué diferencia real hay entre un chatbot y un agente de IA?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="lfaq-0" hidden><p>El alcance de lo que puede hacer. Un chatbot produce texto. Un agente tiene herramientas conectadas y puede consultar, crear y modificar registros en tus sistemas. La consecuencia práctica es que un chatbot mal hecho da una respuesta mala, y un agente mal hecho ejecuta una acción mala: por eso el diseño de límites importa más que el modelo.</p></div>
+        </div>
+        <div class="panel faq__item reveal">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="lfaq-1">¿Cuánta autonomía se le da?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="lfaq-1" hidden><p>La mínima que resuelva el caso. Lo habitual es que las lecturas y consultas sean libres, las escrituras estén acotadas a operaciones concretas, y las acciones sensibles — enviar una propuesta, emitir una factura, cerrar una incidencia — requieran validación o cumplan una regla explícita.</p></div>
+        </div>
+        <div class="panel faq__item reveal">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="lfaq-2">¿Se puede saber por qué el agente hizo algo?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="lfaq-2" hidden><p>Sí, si se ha construido para eso. Cada ejecución debe registrar la entrada, las consultas hechas, la decisión tomada y la acción ejecutada. Sin ese registro no hay forma de depurar un fallo ni de explicar una decisión a un cliente.</p></div>
+        </div>
+        <div class="panel faq__item reveal">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="lfaq-3">¿Qué modelo de IA usáis?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="lfaq-3" hidden><p>Depende de la tarea, y no es una decisión definitiva. Interpretar un email corto y razonar sobre un expediente complejo no piden lo mismo. El sistema se construye para poder cambiar de modelo sin rehacer el flujo, porque en este terreno lo que hoy es la mejor opción en seis meses puede no serlo.</p></div>
+        </div>
+        <div class="panel faq__item reveal">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="lfaq-4">¿El agente aprende de nuestros datos?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="lfaq-4" hidden><p>Consulta vuestros datos en el momento de responder, que es distinto de entrenar un modelo con ellos. Lo primero es lo que hace falta casi siempre y es reversible; lo segundo rara vez se justifica en una pyme y trae consigo un problema de privacidad y de mantenimiento.</p></div>
+        </div>
+        <div class="panel faq__item reveal">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="lfaq-5">¿Cuánto tarda en estar en producción?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="lfaq-5" hidden><p>Un agente con un objetivo estrecho y sistemas con API suele medirse en semanas. Lo que alarga los plazos casi nunca es la IA: son los accesos, los permisos y descubrir que el proceso real no era el que estaba documentado.</p></div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section ld__rel">
+    <div class="ld__block reveal">
+      <h2>Otros servicios de automatización</h2>
+      <ul class="svc-links">
+        <li><a href="/es/automatizacion-facturacion/">Automatización de facturación con IA para empresas</a></li>
+        <li><a href="/es/automatizacion-whatsapp/">Automatización de WhatsApp con IA para empresas</a></li>
+        <li><a href="/es/automatizar-holded/">Automatizar Holded y conectarlo con tus herramientas</a></li>
+      </ul>
+      <p class="ld__home">Somos <a href="/es/">NitidFlow, agencia de automatización con inteligencia artificial en Madrid</a>. Trabajamos con pymes y empresas de toda España.</p>
+    </div>
+  </section>
+
+<section class="section section--contact" id="book-audit">
+    <div class="panel contact">
+      <div class="contact__copy">
+        <p class="eyebrow">AUDITORÍA DE AUTOMATIZACIÓN GRATUITA</p>
+        <h2>¿Listo para automatizar tu negocio?</h2>
+        <p class="contact__lede">Reserva hoy tu auditoría de automatización gratuita. En 30 minutos te enseñamos exactamente dónde está perdiendo tiempo tu negocio &mdash; y cuánto vale recuperarlo.</p>
+
+        <ul class="ticks">
+          <li>Sin compromiso</li>
+          <li>Llamada de 30 minutos</li>
+          <li>Conclusiones a medida</li>
+        </ul>
+
+        <a class="sched" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
+           data-cal-link="smnitidflow" data-cal-namespace="audit">
+          <p class="sched__url">cal.com/smnitidflow</p>
+          <p class="sched__title">Auditoría de automatización gratuita</p>
+          <p class="sched__meta">30 min &middot; Videollamada</p>
+          <!-- Solo ilustrativos: la disponibilidad real se carga dentro del
+               calendario, así que se ocultan a los lectores de pantalla en vez
+               de anunciarse como si fueran huecos reservables. -->
+          <ul class="sched__slots" aria-hidden="true">
+            <li>Lun 10:00</li><li>Lun 14:00</li><li>Mar 9:00</li>
+            <li>Mar 11:00</li><li>Mié 15:00</li><li>Jue 10:00</li>
+          </ul>
+          <p class="sched__note">Abre el calendario &mdash; disponibilidad real, reservado en dos clics.</p>
+        </a>
+      </div>
+
+      <!-- Netlify Forms: las respuestas aparecen en el panel de Netlify, sin backend -->
+      <form action='/es/gracias' class='form' method='POST' name='audit' data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="audit">
+        <input type="hidden" name="language" value="es">
+        <p class="hidden"><label>No rellenes esto: <input name="bot-field"></label></p>
+
+        <div class="form__row">
+          <label for="cf-name">Nombre</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form__row">
+          <label for="cf-email">Email de trabajo</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form__row">
+          <label for="cf-company">Empresa</label>
+          <input id="cf-company" name="company" type="text" autocomplete="organization">
+        </div>
+        <div class="form__row">
+          <label for="cf-msg">¿Qué te encantaría automatizar?</label>
+          <textarea id="cf-msg" name="message" rows="4" required></textarea>
+        </div>
+
+        <button class="btn btn--solid" type="submit">Solicitar mi auditoría gratuita</button>
+        <p class="form__note">Respondemos en un día laborable. Sin spam ni secuencias de venta.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="logoclip logoclip--sm"><img src="/assets/logo.png?v=20260911" alt="Nitidflow" width="660" height="130"></span>
+      <p>Automatizamos el trabajo que ralentiza tu negocio. Automatizaciones con IA llave en mano que ahorran tiempo, reducen costes y escalan contigo.</p>
+    
+      <ul class="footer__nap">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10.4" r="2.7"/></svg>
+          <span>Madrid, España</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.3 3.5h3l1.6 4-2 1.2a12 12 0 006.4 6.4l1.2-2 4 1.6v3a2 2 0 01-2.2 2A17.5 17.5 0 014.3 5.7a2 2 0 012-2.2z"/></svg>
+          <a href="tel:+34683491655">+34 683 49 16 55</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.8" y="5" width="18.4" height="14" rx="2.6"/><path d="M3.4 7l7.3 5.4a2.2 2.2 0 002.6 0L20.6 7"/></svg>
+          <a href="mailto:hello@nitidflow.com">hello@nitidflow.com</a>
+        </li>
+      </ul>
+</div>
+
+    <nav class="footer__col" aria-label="Servicios">
+      <h2>SERVICIOS</h2>
+      <ul>
+        <li><a href="#services">Automatización de flujos</a></li>
+        <li><a href="#services">Agentes de IA</a></li>
+        <li><a href="#services">Automatización de CRM</a></li>
+        <li><a href="#services">Integraciones</a></li>
+        <li><a href="#services">Informes y cuadros de mando</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer__col" aria-label="Empresa">
+      <h2>EMPRESA</h2>
+      <ul>
+        <li><a href="#how-it-works">Sobre nosotros</a></li>
+        <li><a href="#case-studies">Casos de éxito</a></li>
+        <li><a href="#book-audit">Empleo</a></li>
+        <li><a href="#book-audit">Blog</a></li>
+        <li><a href="#book-audit">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer__col" aria-label="Recursos">
+      <h2>RECURSOS</h2>
+      <ul>
+        <li><a href="#how-it-works">Guías de automatización</a></li>
+        <li><a href="#book-audit">Calculadora de ROI</a></li>
+        <li><a href="#services">Comparativas de herramientas</a></li>
+        <li><a href="#faq">Centro de ayuda</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__col footer__news">
+      <h2>MANTENTE AL DÍA</h2>
+      <p>Ideas prácticas de automatización para quienes operan. Mensual, breve y útil.</p>
+      <form action='/es/gracias' class='news' method='POST' name='newsletter' data-netlify="true" netlify-honeypot="bot-field-news">
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="hidden" name="language" value="es">
+        <p class="hidden"><label>Omitir: <input name="bot-field-news"></label></p>
+        <label class="sr" for="news-email">Correo electrónico</label>
+        <input id="news-email" name="email" type="email" placeholder="Correo electrónico" autocomplete="email" required>
+        <button class="btn btn--sm btn--solid" type="submit">Unirme</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer__legal">
+    <p>&copy; <span id="year">2026</span> Nitidflow. Todos los derechos reservados.</p>
+    <p class="footer__links">
+      <a href="#faq">Política de privacidad</a>
+      <a href="#faq">Términos del servicio</a>
+      <a href="mailto:hello@nitidflow.com">hello@nitidflow.com</a>
+    </p>
+  </div>
+</footer>
+
+<script src="/js/vendor/gsap.min.js"></script>
+<script src="/js/vendor/ScrollTrigger.min.js"></script>
+<script src="/js/main.js?v=20260911" defer></script>
+<script src="/js/silk.js?v=20260911" defer></script>
+<script src="/js/cal.js?v=20260911" defer></script>
+<script src="/js/forms.js?v=20260911" defer></script>
+
+</body>
+</html>

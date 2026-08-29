@@ -1475,3 +1475,91 @@ a.sched:focus-visible{ outline:2px solid var(--pale); outline-offset:3px; }
   .perk{ max-width:none; }
   .perks{ gap:14px 22px; }
 }
+
+/* ============================================================
+   Footer — NAP visible
+   Ciudad, teléfono y correo a la vista: Google contrasta estos
+   datos con los de la ficha de Google Business Profile, y que
+   coincidan es una de las señales del posicionamiento local.
+   ============================================================ */
+
+.footer__nap{
+  margin:18px 0 0; padding:0; list-style:none;
+  display:flex; flex-direction:column; gap:9px;
+}
+.footer__nap li{
+  display:flex; align-items:center; gap:10px;
+  font-size:.87rem; color:var(--text-dim);
+}
+.footer__nap svg{ width:16px; height:16px; flex:none; opacity:.7; }
+.footer__nap a{ color:var(--text-dim); text-decoration:none; transition:color .22s ease; }
+.footer__nap a:hover{ color:#fff; text-decoration:underline; text-underline-offset:3px; }
+
+/* ============================================================
+   Landings de servicio
+   Comparten el chrome de la home y añaden lo suyo: miga de pan,
+   cabecera y bloques de texto largo. La columna se estrecha a
+   unos 68 caracteres, que es donde la lectura seguida cansa
+   menos que a todo el ancho de la página.
+   ============================================================ */
+
+.ld__hero{ padding-top:calc(var(--nav-h) + clamp(34px,5vh,70px)); }
+
+.crumb{
+  display:flex; justify-content:center; gap:9px;
+  margin:0 0 clamp(14px,2vw,20px);
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--text-dim); opacity:.75;
+}
+.crumb a{ color:var(--text-dim); text-decoration:none; }
+.crumb a:hover{ color:#fff; text-decoration:underline; text-underline-offset:3px; }
+.crumb span[aria-hidden]{ opacity:.45; }
+
+.ld__cta{ margin:clamp(24px,3vw,34px) 0 0; text-align:center; }
+
+.ld__body{ padding-top:clamp(20px,3vw,34px); }
+
+.ld__block{
+  max-width:68ch; margin:0 auto;
+}
+.ld__block + .ld__block{ margin-top:clamp(34px,4.5vw,58px); }
+
+.ld__block h2{
+  margin:0 0 clamp(14px,1.8vw,20px);
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(1.24rem,2.1vw,1.68rem); line-height:1.2;
+  letter-spacing:-.02em; color:#fff;
+}
+.ld__block p{
+  margin:0 0 1em;
+  font-size:clamp(.95rem,1.1vw,1.02rem); line-height:1.72;
+  color:var(--text-dim);
+}
+.ld__block p:last-child{ margin-bottom:0; }
+
+/* Enlaces a las landings desde la home: descubribles por Google y por
+   quien busca su caso concreto en vez del servicio genérico. */
+.svc-links{
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:10px; margin:clamp(26px,3vw,38px) 0 0; padding:0; list-style:none;
+}
+.svc-links a{
+  display:inline-block; padding:9px 17px;
+  border:1px solid var(--edge-soft); border-radius:999px;
+  background:rgba(255,255,255,.04);
+  font-size:.87rem; color:var(--text-dim); text-decoration:none;
+  transition:color .25s ease, border-color .25s ease, background .25s ease;
+}
+.svc-links a:hover{
+  color:#fff; border-color:rgba(168,208,236,.4);
+  background:rgba(47,107,150,.18);
+}
+
+/* Bloque de enlaces relacionados al pie de cada landing. */
+.ld__rel{ padding-top:clamp(24px,3vw,40px); }
+.ld__rel .svc-links{ justify-content:flex-start; margin-top:18px; }
+.ld__home{
+  margin:22px 0 0; font-size:.92rem; line-height:1.65; color:var(--text-dim);
+}
+.ld__home a{ color:var(--pale); text-decoration:underline; text-underline-offset:3px; }
+.ld__home a:hover{ color:#fff; }
