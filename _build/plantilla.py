@@ -1,4 +1,4 @@
-# Generado desde es/index.html por _build/extraer.py — no editar a mano.
+# Generado desde index.html por _build/extraer.py — no editar a mano.
 FONDO = """<div class="bg" aria-hidden="true">
   <div class="bg__media"
        data-silk
@@ -22,7 +22,7 @@ FONDO = """<div class="bg" aria-hidden="true">
 NAV = """<header class="nav" id="nav">
   <div class="nav__inner">
     <a class="nav__brand" href="#top" aria-label="Nitidflow — inicio">
-      <span class="logoclip logoclip--sm"><img src="/assets/logo.png?v=20260911" alt="Nitidflow" width="660" height="130"></span>
+      <span class="logoclip logoclip--sm"><picture><source srcset="/assets/logo.webp?v=20260918" type="image/webp"><img src="/assets/logo.png?v=20260918" alt="Nitidflow" width="660" height="130"></picture></span>
     </a>
 
     <nav class="nav__links" id="nav-links" aria-label="Principal">
@@ -32,7 +32,7 @@ NAV = """<header class="nav" id="nav">
       <a href="#case-studies">Casos de éxito</a>
       <a href="#faq">FAQ</a>
       <span class="lang" role="group" aria-label="Idioma">
-        <a href="/?lang=en" data-lang="en" hreflang="en">EN</a>
+        <a href="/en/" data-lang="en" hreflang="en">EN</a>
         <span class="lang__on" aria-current="true">ES</span>
       </span>
       <a class="btn btn--solid btn--sm nav__cta" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
@@ -76,7 +76,7 @@ CTA = """<section class="section section--contact" id="book-audit">
       </div>
 
       <!-- Netlify Forms: las respuestas aparecen en el panel de Netlify, sin backend -->
-      <form action='/es/gracias' class='form' method='POST' name='audit' data-netlify="true" netlify-honeypot="bot-field">
+      <form action='/gracias' class='form' method='POST' name='audit' data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="audit">
         <input type="hidden" name="language" value="es">
         <p class="hidden"><label>No rellenes esto: <input name="bot-field"></label></p>
@@ -109,7 +109,7 @@ CTA = """<section class="section section--contact" id="book-audit">
 FOOTER = """<footer class="footer">
   <div class="footer__top">
     <div class="footer__brand">
-      <span class="logoclip logoclip--sm"><img src="/assets/logo.png?v=20260911" alt="Nitidflow" width="660" height="130"></span>
+      <span class="logoclip logoclip--sm"><picture><source srcset="/assets/logo.webp?v=20260918" type="image/webp"><img src="/assets/logo.png?v=20260918" alt="Nitidflow" width="660" height="130"></picture></span>
       <p>Automatizamos el trabajo que ralentiza tu negocio. Automatizaciones con IA llave en mano que ahorran tiempo, reducen costes y escalan contigo.</p>
     
       <ul class="footer__nap">
@@ -163,7 +163,7 @@ FOOTER = """<footer class="footer">
     <div class="footer__col footer__news">
       <h2>MANTENTE AL DÍA</h2>
       <p>Ideas prácticas de automatización para quienes operan. Mensual, breve y útil.</p>
-      <form action='/es/gracias' class='news' method='POST' name='newsletter' data-netlify="true" netlify-honeypot="bot-field-news">
+      <form action='/gracias' class='news' method='POST' name='newsletter' data-netlify="true" netlify-honeypot="bot-field-news">
         <input type="hidden" name="form-name" value="newsletter">
         <input type="hidden" name="language" value="es">
         <p class="hidden"><label>Omitir: <input name="bot-field-news"></label></p>
@@ -186,9 +186,9 @@ FOOTER = """<footer class="footer">
 
 SCRIPTS = """<script src="/js/vendor/gsap.min.js"></script>
 <script src="/js/vendor/ScrollTrigger.min.js"></script>
-<script src="/js/main.js?v=20260911" defer></script>
-<script src="/js/silk.js?v=20260911" defer></script>
-<script src="/js/cal.js?v=20260911" defer></script>
-<script src="/js/forms.js?v=20260911" defer></script>
+<script src="/js/main.js?v=20260918" defer></script>
+<script src="/js/silk.js?v=20260918" defer></script>
+<script src="/js/cal.js?v=20260918" defer></script>
+<script src="/js/forms.js?v=20260918" defer></script>
 """
 

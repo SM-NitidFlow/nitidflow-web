@@ -123,7 +123,6 @@ a{ color:inherit; }
 .logoclip{ display:block; width:clamp(124px,14vw,156px); }
 .logoclip img{ display:block; width:100%; height:auto; }
 
-
 /* ============================================================
    Glass panels
    ============================================================ */
@@ -312,18 +311,6 @@ a{ color:inherit; }
 }
 .hero__cta{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:clamp(24px,3.4vw,38px); }
 
-.trust{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
-.trust__faces{ display:flex; list-style:none; margin:0; padding:0; }
-.trust__faces li{
-  width:34px; height:34px; margin-right:-10px;
-  display:grid; place-items:center;
-  border-radius:50%; border:1px solid var(--edge);
-  background:rgba(47,107,150,.55);
-  font-family:var(--mono); font-size:.62rem; letter-spacing:.04em; color:#fff;
-}
-.trust__copy{ margin:0; font-size:.84rem; color:var(--text-dim); }
-
-
 @media (max-width:900px){
   .hero{ min-height:auto; padding-top:calc(var(--nav-h) + 34px); }
   .hero__inner{ grid-template-columns:1fr; gap:clamp(30px,6vw,48px); }
@@ -437,33 +424,7 @@ section[id]{ scroll-margin-top:var(--nav-h); }
 
 .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:clamp(18px,2.2vw,30px); }
 @media (min-width:1000px){ .cards--3{ grid-template-columns:repeat(3,1fr); } }
-
-/* ============================================================
-   Solution rail (6 numbered steps)
-   ============================================================ */
-
-.rail{
-  list-style:none; margin:0; padding:0;
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:clamp(16px,2vw,24px);
-}
-.rail__item{ padding:clamp(22px,2.4vw,30px); border-radius:var(--r-md); }
-.rail__step{
-  display:block; margin-bottom:10px;
-  font-family:var(--mono); font-size:.64rem; letter-spacing:.2em;
-  color:var(--pale); opacity:.7;
-}
-.rail__item h3{ margin:0 0 8px; font-family:var(--display); font-weight:700; font-size:1.14rem; color:#fff; }
-.rail__item p{ margin:0; font-size:.92em; color:var(--text-dim); }
-
-/* ============================================================
-   Live workflow showcase
-   ============================================================ */
-
-.section--flow{ padding-top:0; }
 .flow{ padding:clamp(24px,3vw,40px); border-radius:var(--r-lg); }
-.flow__head{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:clamp(20px,2.6vw,30px); }
-.flow__head h3{ margin:0; font-family:var(--display); font-weight:700; font-size:clamp(1.05rem,1.6vw,1.35rem); color:#fff; }
 
 .flow__live,.wf__live{
   display:inline-flex; align-items:center; gap:7px;
@@ -482,12 +443,6 @@ section[id]{ scroll-margin-top:var(--nav-h); }
   70% { box-shadow:0 0 0 9px rgba(110,231,168,0); }
   100%{ box-shadow:0 0 0 0 rgba(110,231,168,0); }
 }
-
-.flow__nodes{
-  list-style:none; margin:0; padding:0;
-  display:grid; gap:12px;
-  grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
-}
 .flow__node{
   position:relative;
   padding:16px 16px 14px;
@@ -501,25 +456,15 @@ section[id]{ scroll-margin-top:var(--nav-h); }
   border-color:rgba(207,226,240,.55);
   transform:translateY(-3px);
 }
-.flow__name{ display:block; font-size:.92rem; color:#fff; }
-.flow__tool{
-  display:block; margin-top:4px;
-  font-family:var(--mono); font-size:.62rem; letter-spacing:.1em;
-  text-transform:uppercase; color:var(--pale); opacity:.72;
-}
 
 /* ============================================================
    How-it-works steps
    ============================================================ */
 
 .steps{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:clamp(16px,2vw,26px); }
-.steps--long{ grid-template-columns:repeat(auto-fit,minmax(272px,1fr)); }
 .step{ padding:clamp(24px,2.6vw,32px); border-radius:var(--r-md); }
-.step__n{ display:block; margin-bottom:14px; font-family:var(--mono); font-size:1.4rem; font-weight:700; color:var(--pale); opacity:.55; }
 .step h3{ margin:0 0 10px; font-family:var(--display); font-weight:700; font-size:1.12rem; color:#fff; }
 .step p{ margin:0; font-size:.92em; color:var(--text-dim); }
-.step__out{ margin-top:12px !important; padding-top:12px; border-top:1px solid rgba(255,255,255,.12); font-size:.87em !important; }
-.step__out strong{ color:#fff; font-weight:500; }
 
 .cta-band{
   margin-top:clamp(26px,3.4vw,44px);
@@ -576,17 +521,6 @@ section[id]{ scroll-margin-top:var(--nav-h); }
 .tool--wm .tool__n{
   position:absolute; width:1px; height:1px;
   overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;
-}
-
-/* stand-in for marks we can't ship (see README) — echoes the
-   monogram avatars in the hero and testimonial */
-.tool__mono{
-  width:26px; height:26px; flex:0 0 auto;
-  display:grid; place-items:center;
-  border:1px solid currentColor; border-radius:7px;
-  font-family:var(--display); font-weight:600;
-  font-size:.78rem; line-height:1; letter-spacing:.01em;
-  opacity:.92;
 }
 
 .tool__n{
@@ -1411,7 +1345,6 @@ a.sched:focus-visible{ outline:2px solid var(--pale); outline-offset:3px; }
   background:rgba(47,107,150,.3);
   border-color:rgba(155,232,184,.34);
 }
-
 
 @media (max-width:420px){
   .mini__ico{ width:34px; height:34px; }

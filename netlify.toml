@@ -7,6 +7,14 @@
 [build.processing]
   skip_processing = false
 
+# El fuente se mantiene legible y comentado; la minificación ocurre al
+# publicar, así no hay dos versiones del mismo fichero que mantener.
+[build.processing.css]
+  minify = true
+
+[build.processing.js]
+  minify = true
+
 [[headers]]
   for = "/*"
   [headers.values]

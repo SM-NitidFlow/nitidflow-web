@@ -13,7 +13,7 @@ import plantilla as P
 from landings import LANDINGS
 
 BASE = "https://nitidflow.com"
-V = "20260917"
+V = "20260918"
 RAIZ = os.path.join(os.path.dirname(__file__), "..")
 
 
