@@ -95,7 +95,7 @@ LANDINGS = [
 },
 {
  "slug": "automatizar-holded",
- "title": "Automatizar Holded: integraciones a medida | NitidFlow Madrid",
+ "title": "Automatizar Holded en Madrid | NitidFlow",
  "desc": "Conectamos Holded con tus herramientas y automatizamos facturas, contactos y cobros. Agencia de automatización con IA en Madrid. Auditoría gratuita.",
  "kw": "automatizar Holded",
  "h1": "Automatizar Holded y conectarlo con tus herramientas",

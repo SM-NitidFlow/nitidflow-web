@@ -163,8 +163,12 @@
       { opacity: 1, y: 0, scale: 1, duration: 1.1 }, 0.1);
   }
   if (heroBits.length) {
-    intro.fromTo(heroBits, { opacity: 0, y: 26 },
-      { opacity: 1, y: 0, duration: 0.85, stagger: 0.11 }, 0.25);
+    /* Antes: arranque .25, duración .85, stagger .11 — el último elemento
+       no acababa hasta 1,54 s. Demasiado para contenido que ya está en la
+       primera pantalla, y con el titular en opacity 0 tanto rato el LCP se
+       resiente. Ahora el último cierra a 0,83 s. */
+    intro.fromTo(heroBits, { opacity: 0, y: 22 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.07 }, 0.08);
   }
 
   /* section reveals, batched so long grids animate as rows */

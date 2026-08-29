@@ -13,8 +13,9 @@ import plantilla as P
 from landings import LANDINGS
 
 BASE = "https://nitidflow.com"
-V = "20260918"
+V = "20260925"
 RAIZ = os.path.join(os.path.dirname(__file__), "..")
+HOY = __import__("datetime").date.today().isoformat()
 
 
 def bloque(titulo, parrafos):
@@ -47,7 +48,10 @@ def schema(l, url):
         {"@type": "WebPage", "@id": url + "#page", "url": url,
          "name": l["title"], "description": l["desc"],
          "isPartOf": {"@id": f"{BASE}/#web"},
-         "about": {"@id": url + "#service"}, "inLanguage": "es-ES"},
+         "about": {"@id": url + "#service"}, "inLanguage": "es-ES",
+         "dateModified": HOY,
+         "primaryImageOfPage": {"@id": url + "#og"},
+         "breadcrumb": {"@id": url + "#breadcrumb"}},
         # La miga de pan sale en el resultado de Google en lugar de la URL cruda.
         {"@type": "BreadcrumbList", "@id": url + "#breadcrumb",
          "itemListElement": [
@@ -126,13 +130,13 @@ def pagina(l):
 <main id="top">
 
   <section class="section ld__hero">
-    <nav class="crumb reveal" aria-label="Miga de pan">
+    <nav class="crumb" data-anim="hero" aria-label="Miga de pan">
       <a href="/">Inicio</a><span aria-hidden="true">/</span><span>{l['h1']}</span>
     </nav>
-    <p class="eyebrow eyebrow--center reveal">{l['eyebrow']}</p>
-    <h1 class="statement reveal">{l['h1']}</h1>
-    <p class="lede reveal">{l['lede']}</p>
-    <p class="ld__cta reveal">
+    <p class="eyebrow eyebrow--center" data-anim="hero">{l['eyebrow']}</p>
+    <h1 class="statement">{l['h1']}</h1>
+    <p class="lede" data-anim="hero">{l['lede']}</p>
+    <p class="ld__cta" data-anim="hero">
       <a class="btn btn--solid" href="https://cal.com/smnitidflow" target="_blank" rel="noopener"
          data-cal-link="smnitidflow" data-cal-namespace="audit">Reserva una auditoría gratuita</a>
     </p>
@@ -152,7 +156,7 @@ def pagina(l):
 
   <section class="section ld__rel">
     <div class="ld__block reveal">
-      <h2>Otros servicios de automatización</h2>
+      <h2>Automatización con IA en Madrid: otros servicios</h2>
       <ul class="svc-links">
 {relacionadas}
       </ul>
