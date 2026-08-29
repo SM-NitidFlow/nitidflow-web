@@ -247,3 +247,122 @@
     document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
   }
 })();
+
+/* ============================================================
+   Proceso — carril de progreso
+   El relleno sigue al scroll y cada marcador se enciende al
+   llegar a su altura. Sin GSAP (o con reduced-motion) el carril
+   se queda lleno y todos los pasos activos: la sección se lee
+   igual, sólo que sin la animación.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var proc = document.querySelector('.proc');
+  if (!proc) return;
+
+  var fill  = proc.querySelector('.proc__fill');
+  var steps = Array.prototype.slice.call(proc.querySelectorAll('[data-proc]'));
+  if (!fill || !steps.length) return;
+
+  var reduced = window.matchMedia &&
+                matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Sin motor de scroll no hay progreso que animar: se deja todo encendido
+     antes de salir, para no dejar la sección a medio pintar. */
+  if (typeof ScrollTrigger === 'undefined' || reduced) {
+    fill.style.setProperty('--p', 1);
+    steps.forEach(function (s) { s.classList.add('is-on'); });
+    return;
+  }
+
+  ScrollTrigger.create({
+    trigger: proc,
+    start: 'top 72%',
+    end: 'bottom 62%',
+    onUpdate: function (self) {
+      fill.style.setProperty('--p', self.progress.toFixed(3));
+    }
+  });
+
+  /* Cada paso se enciende por su cuenta: así el encendido coincide con la
+     tarjeta que el lector tiene delante, no con el progreso global. */
+  steps.forEach(function (step) {
+    ScrollTrigger.create({
+      trigger: step,
+      start: 'top 78%',
+      once: true,
+      onEnter: function () { step.classList.add('is-on'); }
+    });
+  });
+})();
+
+/* ============================================================
+   El problema — medidor de la semana y foco al cursor
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var reduced = window.matchMedia &&
+                matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- las horas perdidas se encienden al llegar la sección --- */
+  var loss = document.querySelector('[data-loss]');
+  if (loss) {
+    if (typeof ScrollTrigger === 'undefined' || reduced) {
+      loss.classList.add('is-on');           // sin scroll no hay entrada que esperar
+    } else {
+      ScrollTrigger.create({
+        trigger: loss,
+        start: 'top 82%',
+        once: true,
+        onEnter: function () { loss.classList.add('is-on'); }
+      });
+    }
+  }
+
+  /* --- foco radial siguiendo al ratón sobre las tarjetas ---
+     Un solo listener delegado en la rejilla en vez de uno por tarjeta, y
+     la posición se escribe dentro de un rAF para no tocar estilos en cada
+     evento de movimiento. */
+  var grid = document.querySelector('#problem .grid');
+  if (!grid || reduced || !window.matchMedia('(hover:hover)').matches) return;
+
+  var pending = null;
+
+  grid.addEventListener('mousemove', function (e) {
+    var tile = e.target.closest ? e.target.closest('.tile') : null;
+    if (!tile) return;
+    if (pending) cancelAnimationFrame(pending);
+    pending = requestAnimationFrame(function () {
+      var r = tile.getBoundingClientRect();
+      tile.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      tile.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    });
+  }, { passive: true });
+})();
+
+/* ============================================================
+   Qué hacemos — entrada en cascada del mosaico
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var svcs = document.querySelector('.svcs');
+  if (!svcs) return;
+
+  var reduced = window.matchMedia &&
+                matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (typeof ScrollTrigger === 'undefined' || reduced) {
+    svcs.classList.add('is-on');   // sin scroll no hay entrada que esperar
+    return;
+  }
+
+  ScrollTrigger.create({
+    trigger: svcs,
+    start: 'top 80%',
+    once: true,
+    onEnter: function () { svcs.classList.add('is-on'); }
+  });
+})();

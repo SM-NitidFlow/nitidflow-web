@@ -5,45 +5,11 @@
    ============================================================ */
 
 /* ------------------------------------------------------------
-   Brand fonts: Knockout Cruiserweight (headings) + Nexa (body).
-   Both are commercial and are NOT bundled — drop the licensed
-   .woff2 files into /assets/fonts/ using exactly these names and
-   they take over automatically. `local()` comes first, so if the
-   fonts are installed on the machine they're used with no
-   download. Until then the stack falls back to Oswald / Poppins.
-   See assets/fonts/README.md.
+   Tipografía: Space Grotesk + Inter + JetBrains Mono, las tres
+   servidas desde Google Fonts. Se dejaron atrás Knockout y Nexa
+   (comerciales, nunca llegaron a subirse y daban 404 en cada
+   carga) por un stack técnico, gratuito y sin ficheros que falten.
    ------------------------------------------------------------ */
-
-@font-face{
-  font-family:'Knockout Cruiserweight';
-  src:local('Knockout 52 Cruiserweight'), local('Knockout Cruiserweight'),
-      local('Knockout-Cruiserweight'), local('Knockout HTF52 Cruiserweight'),
-      url('/assets/fonts/knockout-cruiserweight.woff2') format('woff2');
-  /* one static weight covering the whole range: stops the browser
-     from synthetically emboldening it at 600/700/800 */
-  font-weight:400 900;
-  font-style:normal;
-  font-display:swap;
-}
-
-@font-face{
-  font-family:'Nexa';
-  src:local('Nexa Light'), local('Nexa-Light'),
-      url('/assets/fonts/nexa-light.woff2') format('woff2');
-  font-weight:300; font-style:normal; font-display:swap;
-}
-@font-face{
-  font-family:'Nexa';
-  src:local('Nexa Regular'), local('Nexa-Regular'), local('Nexa'),
-      url('/assets/fonts/nexa-regular.woff2') format('woff2');
-  font-weight:400; font-style:normal; font-display:swap;
-}
-@font-face{
-  font-family:'Nexa';
-  src:local('Nexa Bold'), local('Nexa-Bold'),
-      url('/assets/fonts/nexa-bold.woff2') format('woff2');
-  font-weight:500 700; font-style:normal; font-display:swap;
-}
 
 :root{
   --ink:        #071522;
@@ -60,15 +26,19 @@
   --edge:       rgba(255,255,255,.26);
   --edge-soft:  rgba(255,255,255,.14);
 
-  --r-lg: 44px;
-  --r-md: 28px;
-  --r-sm: 10px;
+  /* Radios contenidos: los 44/28px originales daban un aire suave de
+     marca de moda; el registro técnico pide esquinas más secas. */
+  --r-lg: 20px;
+  --r-md: 14px;
+  --r-sm: 9px;
 
-  /* Oswald / Poppins are the free stand-ins until the licensed
-     Knockout + Nexa files are dropped into /assets/fonts/ */
-  --display: 'Knockout Cruiserweight', 'Oswald', 'Arial Narrow', Arial, sans-serif;
-  --body:    'Nexa', 'Poppins', 'Segoe UI', system-ui, sans-serif;
-  --mono:    'Space Mono', ui-monospace, 'Courier New', monospace;
+  /* Stack tech: Space Grotesk para titulares (geométrica, con detalle
+     técnico), Inter para texto de interfaz, JetBrains Mono para etiquetas
+     y datos. Las tres son gratuitas y se sirven desde Google Fonts, así
+     que no hay ficheros de fuentes que falten ni licencias que comprar. */
+  --display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --body:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:    'JetBrains Mono', ui-monospace, 'SF Mono', 'Courier New', monospace;
 
   --pad: clamp(20px, 5vw, 72px);
   --maxw: 1240px;
@@ -83,7 +53,7 @@ body{
   background:var(--ink);
   color:var(--text);
   font-family:var(--body);
-  font-weight:300;
+  font-weight:400;
   font-size:clamp(15px,1.05vw,17px);
   line-height:1.62;
   -webkit-font-smoothing:antialiased;
@@ -114,7 +84,12 @@ a{ color:inherit; }
 
 .bg{
   position:fixed; inset:0; z-index:-1; overflow:hidden;
+  /* El JPEG va primero como respaldo: un navegador que no entienda
+     image-set() descartaría toda la declaración si sólo estuviera ahí. */
   background:var(--ink) url('/assets/background-poster.jpg') center center / cover no-repeat;
+  background-image:image-set(
+    url('/assets/background-poster.webp') type('image/webp'),
+    url('/assets/background-poster.jpg')  type('image/jpeg'));
 }
 
 /* the effect injects its own <canvas> in here */
@@ -142,16 +117,12 @@ a{ color:inherit; }
    1808x504 box at (115,703). These numbers crop to exactly that.
    ============================================================ */
 
-.logoclip{ display:block; position:relative; width:100%; aspect-ratio:1808 / 504; overflow:hidden; }
-.logoclip img{
-  position:absolute;
-  width:110.6195%;   /* 2000 / 1808 */
-  height:396.8254%;  /* 2000 / 504  */
-  left:-6.3606%;     /* -115 / 1808 */
-  top:-139.4841%;    /* -703 / 504  */
-  max-width:none;
-}
-.logoclip--sm{ width:clamp(104px,12vw,132px); }
+/* El logo ya viene recortado a su caja, así que aquí sólo se le da
+   tamaño. Antes había que extraer una región de un PNG de 2000x2000
+   con offsets en porcentaje; ese recorte ya no hace falta. */
+.logoclip{ display:block; width:clamp(124px,14vw,156px); }
+.logoclip img{ display:block; width:100%; height:auto; }
+
 
 /* ============================================================
    Glass panels
@@ -198,9 +169,10 @@ a{ color:inherit; }
   border-bottom-color:rgba(255,255,255,.12);
 }
 
-.nav__brand{ flex:0 0 auto; opacity:0; pointer-events:none; transition:opacity .35s ease; }
-.nav.is-stuck .nav__brand{ opacity:1; pointer-events:auto; }
-
+/* El logo se ve desde el primer pintado. Antes arrancaba oculto y sólo
+   aparecía al hacer scroll, porque el hero llevaba el lockup gigante y
+   enseñar los dos a la vez sobraba; ese lockup ya no está. */
+.nav__brand{ flex:0 0 auto; }
 .nav__links{ display:flex; align-items:center; gap:clamp(14px,2.2vw,30px); margin-left:auto; }
 .nav__links > a:not(.btn){
   font-family:var(--mono); font-size:.72rem; letter-spacing:.13em;
@@ -246,7 +218,6 @@ a{ color:inherit; }
 
 @media (max-width:900px){
   .nav__toggle{ display:block; }
-  .nav__brand{ opacity:1; pointer-events:auto; }
 
   .nav__links{
     position:absolute; top:100%; left:var(--pad); right:var(--pad);
@@ -328,9 +299,9 @@ a{ color:inherit; }
 
 .hero__title{
   margin:0 0 clamp(16px,2vw,24px);
-  font-family:var(--display); font-weight:600;
-  font-size:clamp(2.1rem,4.4vw,3.9rem);
-  line-height:1.02; letter-spacing:-.028em;
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(1.95rem,3.9vw,3.4rem);
+  line-height:1.06; letter-spacing:-.035em;
   color:#fff;
   text-shadow:0 2px 30px rgba(4,14,24,.4);
 }
@@ -352,12 +323,13 @@ a{ color:inherit; }
 }
 .trust__copy{ margin:0; font-size:.84rem; color:var(--text-dim); }
 
-.hero__logo .logoclip{ width:100%; filter:drop-shadow(0 10px 40px rgba(3,12,20,.45)); }
 
 @media (max-width:900px){
   .hero{ min-height:auto; padding-top:calc(var(--nav-h) + 34px); }
   .hero__inner{ grid-template-columns:1fr; gap:clamp(30px,6vw,48px); }
-  .hero__logo{ order:-1; }
+  /* En móvil el visualizador va primero: enseña el producto antes
+     de pedir nada. */
+  .hero__viz{ order:-1; }
 }
 
 /* ============================================================
@@ -575,12 +547,6 @@ section[id]{ scroll-margin-top:var(--nav-h); }
   font-size:.9rem; color:var(--text-dim);
 }
 
-.tools{
-  list-style:none; margin:0; padding:0;
-  display:grid; gap:clamp(8px,1vw,12px);
-  grid-template-columns:repeat(auto-fill, minmax(112px, 1fr));
-}
-
 .tool{
   display:flex; flex-direction:column; align-items:center; gap:9px;
   padding:16px 10px 13px;
@@ -630,7 +596,6 @@ section[id]{ scroll-margin-top:var(--nav-h); }
 }
 
 @media (max-width:420px){
-  .tools{ grid-template-columns:repeat(auto-fill, minmax(96px, 1fr)); }
   .tool{ padding:13px 7px 11px; }
   .tool__n{ font-size:.66rem; }
 }
@@ -787,7 +752,7 @@ a.sched:focus-visible{ outline:2px solid var(--pale); outline-offset:3px; }
 }
 .form input,.form textarea,.news input{
   width:100%; padding:12px 14px;
-  font-family:var(--body); font-size:.98rem; font-weight:300; color:#fff;
+  font-family:var(--body); font-size:.98rem; font-weight:400; color:#fff;
   background:rgba(255,255,255,.09);
   border:1px solid var(--edge-soft); border-radius:var(--r-sm);
   transition:border-color .22s ease, background .22s ease, box-shadow .22s ease;
@@ -878,4 +843,635 @@ a.sched:focus-visible{ outline:2px solid var(--pale); outline-offset:3px; }
   .anim .reveal,.anim [data-anim]{ opacity:1; }
   .flow__dot{ animation:none; }
   *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+}
+
+/* ============================================================
+   Hero — visualizador de automatización en vivo
+   Sustituye al lockup gigante del logo, que daba a la home un
+   aire de marca de ropa en vez de enseñar lo que hacemos.
+   Todo escala con el ancho del contenedor (unidades cqw), así
+   que los cables SVG y las tarjetas nunca se desalinean.
+   ============================================================ */
+
+.hero__viz{ container-type:inline-size; width:100%; }
+
+.viz{
+  border:1px solid var(--edge-soft);
+  border-radius:var(--r-md);
+  background:linear-gradient(160deg, rgba(22,64,95,.42), rgba(7,21,34,.72));
+  box-shadow:0 24px 70px -30px rgba(2,10,18,.9);
+  overflow:hidden;
+  backdrop-filter:blur(14px);
+}
+
+/* --- barra superior --- */
+.viz__bar{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:3cqw 3.4cqw;
+  border-bottom:1px solid var(--edge-soft);
+  background:rgba(255,255,255,.04);
+}
+.viz__name{
+  display:flex; align-items:center; gap:.7em;
+  font-family:var(--mono); font-size:2.1cqw; font-weight:500;
+  letter-spacing:.02em; color:var(--text-dim);
+}
+.viz__name svg{ width:2.6cqw; height:2.6cqw; flex:none; opacity:.75; }
+.viz__live{
+  display:flex; align-items:center; gap:.55em;
+  font-family:var(--mono); font-size:1.85cqw; font-weight:500;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:#8fd6a8;
+}
+.viz__live i{
+  width:.62em; height:.62em; border-radius:50%;
+  background:currentColor; animation:vizBlink 2s ease-in-out infinite;
+}
+@keyframes vizBlink{ 0%,100%{opacity:1} 50%{opacity:.25} }
+
+/* --- lienzo --- */
+.viz__stage{ position:relative; aspect-ratio:600/300; }
+
+.viz__wires{ position:absolute; inset:0; width:100%; height:100%; }
+.viz__wires .wire{
+  fill:none; stroke:var(--blue); stroke-width:1.6; stroke-opacity:.55;
+  stroke-dasharray:5 5;
+  animation:vizFlow 1.1s linear infinite;
+}
+@keyframes vizFlow{ to{ stroke-dashoffset:-10 } }
+.viz__wires .pulse{ fill:#9ad9ff; filter:drop-shadow(0 0 4px #6cc2f5); }
+
+/* --- nodos --- */
+.vnode{
+  position:absolute;
+  left:var(--x); top:var(--y); width:var(--w);
+  display:flex; align-items:center; gap:.75em;
+  padding:1.5cqw 1.7cqw;
+  border:1px solid var(--edge);
+  border-radius:var(--r-sm);
+  background:rgba(11,28,44,.92);
+  box-shadow:0 6px 20px -8px rgba(2,10,18,.85);
+  opacity:0; transform:translateY(8px);
+  animation:vizIn .55s cubic-bezier(.21,.47,.32,.98) forwards;
+  animation-delay:var(--d,0s);
+}
+@keyframes vizIn{ to{ opacity:1; transform:none } }
+
+.vnode__ico{
+  flex:none; display:grid; place-items:center;
+  width:4.6cqw; height:4.6cqw; border-radius:calc(var(--r-sm) - 3px);
+  background:rgba(47,107,150,.28); color:#bfe0f5;
+}
+.vnode__ico svg{ width:2.5cqw; height:2.5cqw; }
+.vnode__txt{ min-width:0; }
+.vnode__title{
+  display:block; font-size:2.05cqw; font-weight:600; line-height:1.15;
+  color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.vnode__app{
+  display:block; font-family:var(--mono); font-size:1.7cqw; line-height:1.3;
+  color:var(--text-dim); opacity:.75; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis;
+}
+.vnode__ok{
+  position:absolute; top:-.9cqw; right:-.9cqw;
+  width:3cqw; height:3cqw; border-radius:50%;
+  background:#0b1c2c; color:#7fdca0;
+  display:grid; place-items:center;
+  opacity:0; transform:scale(.5);
+  animation:vizPop .4s cubic-bezier(.2,1.5,.4,1) forwards;
+  animation-delay:calc(var(--d,0s) + .5s);
+}
+.vnode__ok svg{ width:2.1cqw; height:2.1cqw; }
+@keyframes vizPop{ to{ opacity:1; transform:none } }
+
+/* --- métricas --- */
+.viz__stats{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  margin:0; padding:0;
+  border-top:1px solid var(--edge-soft);
+}
+.viz__stat{ padding:2.4cqw 2.6cqw; }
+.viz__stat + .viz__stat{ border-left:1px solid var(--edge-soft); }
+.viz__stats dt{
+  font-family:var(--mono); font-size:1.65cqw; font-weight:400;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--text-dim);
+  opacity:.8;
+}
+.viz__stats dd{
+  margin:.35em 0 0;
+  font-family:var(--display); font-size:3.6cqw; font-weight:700;
+  letter-spacing:-.02em; color:#fff;
+}
+.viz__stats small{ display:block; font-size:1.6cqw; color:var(--text-dim); opacity:.75; }
+
+/* En móvil el lienzo se queda estrecho: se apilan las métricas y se
+   suben un punto los tamaños para que el texto siga siendo legible. */
+@media (max-width:720px){
+  .viz__stats{ grid-template-columns:1fr 1fr 1fr; }
+  .viz__stat{ padding:3cqw 2cqw; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .viz__wires .wire{ animation:none; stroke-dasharray:none }
+  .viz__wires .pulse{ display:none }
+  .vnode,.vnode__ok{ animation:none; opacity:1; transform:none }
+  .viz__live i{ animation:none }
+}
+
+/* ============================================================
+   Proceso — timeline con carril de progreso
+   Fusiona lo que antes eran dos secciones ("la solución" y
+   "cómo funciona") contando el mismo proceso con distinto
+   número de pasos. El carril se rellena con el scroll y cada
+   marcador se enciende al llegar, así el recorrido se lee como
+   un avance y no como seis tarjetas sueltas.
+   ============================================================ */
+
+.proc{ position:relative; margin-top:clamp(30px,4vw,52px); }
+
+/* carril */
+.proc__track{
+  position:absolute; left:19px; top:8px; bottom:8px; width:2px; z-index:0;
+  background:var(--edge-soft); border-radius:2px;
+}
+.proc__fill{
+  display:block; width:100%; height:100%; border-radius:2px;
+  background:linear-gradient(180deg, var(--blue), #7fdca0);
+  transform:scaleY(var(--p,0)); transform-origin:top;
+}
+
+.proc__list{ list-style:none; margin:0; padding:0; display:grid; gap:clamp(14px,1.8vw,20px); }
+
+.proc__step{ position:relative; padding-left:56px; }
+
+/* marcador */
+.proc__marker{
+  position:absolute; left:0; top:calc(clamp(20px,2.4vw,28px) - 4px);
+  width:40px; height:40px; border-radius:50%;
+  display:grid; place-items:center;
+  z-index:1;
+  border:1px solid var(--edge);
+  background:var(--deep);
+  color:var(--text-dim);
+  transition:border-color .45s ease, color .45s ease, box-shadow .45s ease, background .45s ease;
+}
+.proc__marker svg{ width:19px; height:19px; }
+/* El icono se tiñe con el acento del carril en cuanto el paso se enciende. */
+.proc__step.is-on .proc__marker svg{ color:#9be8b8; }
+.proc__step.is-on .proc__marker{
+  border-color:rgba(127,220,160,.7);
+  background:#16344c;
+  color:#fff;
+  box-shadow:0 0 0 4px rgba(47,107,150,.16), 0 0 20px -4px rgba(127,220,160,.6);
+}
+/* Numeración: sale del carril y pasa a encabezar la tarjeta, donde
+   ordena sin competir con el icono. */
+.proc__n{
+  display:block; margin-bottom:8px;
+  font-family:var(--mono); font-size:.63rem; font-weight:500;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--pale); opacity:.55;
+  transition:opacity .45s ease, color .45s ease;
+}
+.proc__step.is-on .proc__n{ opacity:.95; color:#9be8b8; }
+
+.proc__card{
+  padding:clamp(20px,2.4vw,28px) clamp(20px,2.4vw,30px);
+  border-radius:var(--r-md);
+  transition:border-color .45s ease, transform .45s ease;
+}
+.proc__step.is-on .proc__card{ border-color:var(--edge); }
+
+.proc__card h3{
+  margin:0 0 8px; font-family:var(--display); font-weight:700;
+  font-size:clamp(1.02rem,1.35vw,1.18rem); color:#fff; letter-spacing:-.01em;
+}
+.proc__card p{ margin:0; font-size:.92em; color:var(--text-dim); }
+.proc__out{
+  margin-top:12px !important; padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:.87em !important;
+}
+.proc__out strong{ color:#fff; font-weight:500; }
+
+/* En pantallas anchas el proceso respira en dos columnas, con el
+   carril centrado y las tarjetas alternando lado. */
+@media (min-width:900px){
+  .proc__track{ left:50%; transform:translateX(-50%); }
+  .proc__list{ gap:clamp(18px,2vw,26px); }
+  .proc__step{ width:calc(50% - 42px); padding-left:0; }
+  .proc__step:nth-child(odd){ margin-right:auto; text-align:right; }
+  .proc__step:nth-child(even){ margin-left:auto; }
+  .proc__step:nth-child(odd) .proc__marker{ left:auto; right:-62px; }
+  .proc__step:nth-child(even) .proc__marker{ left:-62px; }
+  .proc__step:nth-child(odd) .proc__out{ border-top-color:rgba(255,255,255,.12); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .proc__fill{ transform:scaleY(1) }
+  .proc__marker,.proc__card{ transition:none }
+}
+
+/* ============================================================
+   El problema — medidor de la semana, iconos y foco al cursor
+   La sección eran seis bloques de texto seguidos. El medidor
+   pone cifra al dato que ya decía la entradilla (una celda =
+   una hora), los iconos dan entrada a cada tarjeta y el foco
+   que sigue al ratón las hace responder al cursor.
+   ============================================================ */
+
+/* --- medidor de la semana --- */
+.loss{
+  max-width:760px;
+  /* El margen inferior separa del bloque de tarjetas, así que pesa más
+     que el superior: si no, el medidor parece la cabecera de la rejilla. */
+  margin:clamp(26px,3.4vw,40px) auto clamp(52px,5.2vw,72px);
+  padding:clamp(22px,2.4vw,28px) clamp(22px,2.6vw,30px);
+  border:1px solid var(--edge-soft); border-radius:var(--r-md);
+  background:rgba(255,255,255,.035);
+}
+.loss__head{
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:14px; flex-wrap:wrap; margin-bottom:14px;
+}
+.loss__label{
+  font-family:var(--mono); font-size:.64rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--text-dim); opacity:.75;
+}
+.loss__val{ font-size:.88rem; color:var(--text-dim); }
+.loss__val b{
+  font-family:var(--display); font-weight:700; font-size:1.12rem;
+  color:#ffc98a; letter-spacing:-.01em;
+}
+
+.loss__bar{ display:flex; flex-wrap:wrap; gap:5px; }
+.loss__cell{
+  position:relative; overflow:hidden;
+  flex:1 1 12px; min-width:9px; height:26px; border-radius:3px;
+  background:rgba(255,255,255,.07);
+  transition:box-shadow .45s ease;
+  transition-delay:calc(var(--i) * 85ms);
+}
+/* Cada hora perdida se rellena de abajo arriba, no se enciende de golpe:
+   el relleno es una capa aparte que escala en Y, así se anima sólo el
+   compositor y la celda vacía sigue visible por debajo. */
+.loss__cell.is-lost::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg,#ffb765,#e08a3c);
+  transform:scaleY(0); transform-origin:bottom;
+  transition:transform .5s cubic-bezier(.22,1,.36,1);
+  transition-delay:calc(var(--i) * 85ms);
+}
+/* El llenado arranca cuando la sección entra en pantalla. */
+.loss.is-on .loss__cell.is-lost::after{ transform:scaleY(1); }
+.loss.is-on .loss__cell.is-lost{ box-shadow:0 0 12px -3px rgba(255,183,101,.65); }
+.loss__foot{
+  margin:12px 0 0; font-family:var(--mono);
+  font-size:.66rem; letter-spacing:.06em; color:var(--text-dim); opacity:.6;
+}
+
+/* --- iconos de tarjeta --- */
+.tile__ico{
+  display:grid; place-items:center;
+  width:42px; height:42px; margin-bottom:16px;
+  border:1px solid var(--edge-soft); border-radius:var(--r-sm);
+  background:rgba(255,255,255,.05);
+  color:var(--pale);
+  transition:color .35s ease, border-color .35s ease, background .35s ease;
+}
+.tile__ico svg{ width:20px; height:20px; }
+.tile:hover .tile__ico{
+  color:#ffc98a;
+  border-color:rgba(255,201,138,.4);
+  background:rgba(255,183,101,.1);
+}
+
+/* --- foco que sigue al cursor --- */
+.tile{ position:relative; overflow:hidden; }
+.tile > *{ position:relative; z-index:1; }
+.tile::before{
+  content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),
+             rgba(47,107,150,.22), transparent 62%);
+  opacity:0; transition:opacity .4s ease;
+}
+.tile:hover::before{ opacity:1; }
+
+@media (hover:none){ .tile::before{ display:none } }
+
+@media (prefers-reduced-motion:reduce){
+  .loss__cell,.loss__cell.is-lost::after{ transition:none; transition-delay:0s }
+  .loss__cell.is-lost::after{ transform:scaleY(1) }
+  .tile::before{ transition:none }
+}
+
+/* ============================================================
+   El problema — micro-animaciones de icono
+   Cada icono representa su problema al pasar el ratón: el bucle
+   gira, el copiado se desplaza, el cable se separa, el aviso
+   late, el reloj corre y el ojo parpadea. Duran menos de un
+   segundo y sólo se disparan con el cursor encima.
+   ============================================================ */
+
+.tile__ico svg{ overflow:visible; }
+.tile__ico svg > *{ transform-box:fill-box; transform-origin:center; }
+
+/* 01 · el bucle da una vuelta */
+.tile:hover [data-ico="loop"] svg{ animation:icoSpin .85s cubic-bezier(.5,.05,.3,1); }
+@keyframes icoSpin{ to{ transform:rotate(360deg) } }
+
+/* 02 · el documento de delante se separa: copiar y pegar otra vez */
+.tile:hover [data-ico="copy"] svg > rect{ animation:icoShift .7s ease-in-out; }
+@keyframes icoShift{ 50%{ transform:translate(2.2px,2.2px) } }
+
+/* 03 · los dos extremos del cable se alejan */
+.tile:hover [data-ico="unplug"] svg > rect:first-child{ animation:icoLeft .7s ease-in-out; }
+.tile:hover [data-ico="unplug"] svg > rect:nth-child(2){ animation:icoRight .7s ease-in-out; }
+@keyframes icoLeft{ 50%{ transform:translateX(-1.8px) } }
+@keyframes icoRight{ 50%{ transform:translateX(1.8px) } }
+
+/* 04 · el aviso late */
+.tile:hover [data-ico="alert"] svg{ animation:icoPulse .6s ease-in-out 2; }
+@keyframes icoPulse{ 50%{ transform:scale(1.13) } }
+
+/* 05 · la aguja del reloj avanza
+   view-box, no fill-box: el eje de giro es el centro del reloj (12,12 del
+   viewBox). Con fill-box se mediría desde la caja de la propia aguja, cuyo
+   centro no es el eje, y en vez de girar orbitaría desplazándose. */
+.tile:hover [data-ico="clock"] svg > path{
+  animation:icoTick .9s steps(6);
+  transform-box:view-box; transform-origin:12px 12px;
+}
+@keyframes icoTick{ to{ transform:rotate(180deg) } }
+
+/* 06 · el ojo parpadea */
+.tile:hover [data-ico="eye"] svg{ animation:icoBlink .55s ease-in-out; }
+@keyframes icoBlink{ 45%{ transform:scaleY(.12) } }
+
+@media (prefers-reduced-motion:reduce){
+  .tile:hover .tile__ico svg,
+  .tile:hover .tile__ico svg > *{ animation:none !important }
+}
+
+/* ============================================================
+   Herramientas que conectamos — dos pistas en sentidos opuestos
+   Cada pista lleva su contenido duplicado: al desplazarla media
+   anchura, la copia cae exactamente donde estaba la original y
+   el bucle no tiene costura. El gap vive dentro de cada copia
+   (más un padding final del mismo tamaño), de modo que las dos
+   miden lo mismo y ese 50% es exacto.
+   ============================================================ */
+
+.tools-marquee{
+  display:flex; flex-direction:column;
+  gap:clamp(8px,1vw,12px);
+  /* Las pistas miden el doble que la pantalla: sin recorte aquí, el
+     documento entero se ensancharía y aparecería scroll horizontal.
+     El recorte no se puede limitar a un eje (con overflow-x:hidden el
+     otro pasa a auto), así que se aparta el borde con padding y se
+     devuelve con un margen negativo: la tarjeta cabe al elevarse en
+     el hover y el layout no se mueve. */
+  overflow:hidden;
+  padding-block:12px;
+  margin-block:-12px;
+  /* Los extremos se difuminan: las tarjetas entran y salen en vez
+     de aparecer cortadas contra el borde. */
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+}
+
+.tools-track{
+  display:flex; width:max-content;
+  animation:toolsLeft 52s linear infinite;
+  will-change:transform;
+}
+/* Sentidos opuestos y duraciones distintas: si ambas fueran iguales
+   se leerían como un espejo y el movimiento cantaría. */
+.tools-track[data-dir="right"]{ animation-name:toolsRight; animation-duration:64s; }
+
+@keyframes toolsLeft { from{ transform:translateX(0) }    to{ transform:translateX(-50%) } }
+@keyframes toolsRight{ from{ transform:translateX(-50%) } to{ transform:translateX(0) } }
+
+/* Se detiene bajo el cursor para poder leer una herramienta concreta. */
+.tools-marquee:hover .tools-track{ animation-play-state:paused; }
+
+.tools-set{
+  display:flex; align-items:stretch;
+  gap:clamp(8px,1vw,12px);
+  /* padding-left explícito a 0: los <ul> traen 40px de sangría por
+     defecto del navegador, y esa sangría en la segunda copia abría un
+     hueco justo en la juntura del bucle. El padding derecho iguala
+     ambas copias para que el -50% siga siendo exacto. */
+  padding:0 clamp(8px,1vw,12px) 0 0;
+  list-style:none; margin:0;
+}
+
+/* En la pista las tarjetas ya no las reparte una rejilla: ancho propio. */
+.tools-marquee .tool{
+  flex:0 0 auto;
+  width:clamp(104px,11vw,124px);
+  justify-content:center;
+}
+.tools-marquee .tool:hover{ transform:translateY(-3px); }
+
+@media (max-width:600px){
+  .tools-marquee .tool{ width:96px; }
+}
+
+/* Sin movimiento: vuelven a ser una rejilla estática y se retira la copia. */
+@media (prefers-reduced-motion:reduce){
+  .tools-track{ animation:none; width:100%; }
+  .tools-set[aria-hidden="true"]{ display:none; }
+  .tools-set{ flex-wrap:wrap; justify-content:center; padding-right:0; }
+  .tools-marquee{ -webkit-mask-image:none; mask-image:none; }
+}
+
+/* ============================================================
+   Qué hacemos — mosaico de capacidades
+   Eran doce cuadrados idénticos con sólo texto. Ahora cuatro
+   capacidades ancla ocupan doble ancho, cada tarjeta tiene su
+   icono, y al pasar el cursor un filo de luz recorre el borde.
+   ============================================================ */
+
+/* El ángulo se declara como propiedad tipada para poder animarlo:
+   sin esto un conic-gradient no interpola y el filo no giraría. */
+@property --svc-a{ syntax:'<angle>'; initial-value:0turn; inherits:false; }
+
+.svcs{
+  display:grid; gap:clamp(10px,1.1vw,14px);
+  grid-template-columns:repeat(4,1fr);
+  margin-top:clamp(34px,4vw,52px);
+}
+.svc--wide{ grid-column:span 2; }
+
+.svc{
+  position:relative; isolation:isolate;
+  display:flex; flex-direction:column;
+  padding:clamp(20px,2.2vw,28px);
+  border:1px solid var(--edge-soft); border-radius:var(--r-md);
+  background:linear-gradient(155deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+  /* Entrada en cascada diagonal, escalonada por el --d de cada tarjeta. */
+  opacity:0; transform:translateY(14px);
+  transition:transform .55s cubic-bezier(.22,1,.36,1),
+             opacity .55s ease,
+             border-color .3s ease, background .3s ease;
+}
+.svcs.is-on .svc{ opacity:1; transform:none; transition-delay:var(--d,0s); }
+.svc:hover{ background:linear-gradient(155deg, rgba(255,255,255,.09), rgba(255,255,255,.03)); }
+
+/* Filo de luz: un anillo de 1px recortado con máscara, para que el
+   degradado sólo se vea en el borde y no rellene la tarjeta. */
+.svc::before{
+  content:''; position:absolute; inset:-1px; z-index:-1;
+  border-radius:inherit; padding:1px;
+  background:conic-gradient(from var(--svc-a),
+             transparent 0turn, var(--blue) .06turn,
+             #9be8b8 .12turn, transparent .22turn);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  opacity:0; transition:opacity .35s ease;
+}
+.svc:hover::before{ opacity:1; animation:svcEdge 2.6s linear infinite; }
+@keyframes svcEdge{ to{ --svc-a:1turn } }
+
+.svc__ico{
+  display:grid; place-items:center;
+  width:44px; height:44px; margin-bottom:18px;
+  border:1px solid var(--edge-soft); border-radius:var(--r-sm);
+  background:rgba(47,107,150,.16); color:#bfe0f5;
+  transition:color .3s ease, background .3s ease, border-color .3s ease;
+}
+.svc__ico svg{ width:21px; height:21px; }
+.svc:hover .svc__ico{
+  color:#d6f0ff; background:rgba(47,107,150,.3);
+  border-color:rgba(155,232,184,.34);
+}
+
+.svc__n{
+  position:absolute; top:clamp(20px,2.2vw,28px); right:clamp(20px,2.2vw,28px);
+  font-family:var(--mono); font-size:.62rem; letter-spacing:.14em;
+  color:var(--pale); opacity:.28;
+  transition:opacity .3s ease, color .3s ease;
+}
+.svc:hover .svc__n{ opacity:.7; color:#9be8b8; }
+
+.svc h3{
+  margin:0 0 10px;
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(1rem,1.35vw,1.16rem); line-height:1.22; color:#fff;
+}
+.svc p{ margin:0; font-size:.9rem; line-height:1.6; color:var(--text-dim); }
+
+/* Las anclas respiran más y su texto no se estira a lo ancho. */
+.svc--wide h3{ font-size:clamp(1.12rem,1.6vw,1.38rem); }
+.svc--wide p{ max-width:46ch; }
+
+@media (max-width:980px){
+  .svcs{ grid-template-columns:repeat(2,1fr); }
+  .svc--wide{ grid-column:span 2; }
+}
+@media (max-width:560px){
+  .svcs{ grid-template-columns:1fr; }
+  .svc--wide{ grid-column:span 1; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .svc{ opacity:1; transform:none; transition:none; }
+  .svc:hover::before{ animation:none; }
+}
+
+/* ============================================================
+   Sectores — icono junto al texto
+   Las tarjetas son compactas, así que el icono va en su propia
+   columna y abarca las dos filas (título y descripción) en vez
+   de ir encima: no añade altura y alinea las ocho por igual.
+   ============================================================ */
+
+.mini{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  column-gap:clamp(12px,1.2vw,16px);
+  align-items:start;
+}
+
+.mini__ico{
+  grid-row:span 2;                /* título + descripción */
+  display:grid; place-items:center;
+  width:40px; height:40px;
+  border:1px solid var(--edge-soft); border-radius:var(--r-sm);
+  background:rgba(47,107,150,.16); color:#bfe0f5;
+  transition:color .3s ease, background .3s ease, border-color .3s ease;
+}
+.mini__ico svg{ width:20px; height:20px; }
+
+.mini:hover .mini__ico{
+  color:#d6f0ff;
+  background:rgba(47,107,150,.3);
+  border-color:rgba(155,232,184,.34);
+}
+
+
+@media (max-width:420px){
+  .mini__ico{ width:34px; height:34px; }
+  .mini__ico svg{ width:17px; height:17px; }
+}
+
+/* ============================================================
+   Hero — versión sin panel
+   El bloque de texto iba dentro de una tarjeta de cristal que
+   lo encajonaba y competía con el visualizador. Ahora respira
+   sobre el fondo: el eyebrow se convierte en píldora para no
+   perderse, el titular cierra con acento de color y los
+   avatares dejan paso a tres garantías concretas.
+   ============================================================ */
+
+.hero__panel{
+  padding:0;                       /* ya no es una tarjeta */
+  border:0; background:none; box-shadow:none; backdrop-filter:none;
+}
+
+/* Sin la tarjeta detrás, el eyebrow necesita contorno propio. */
+.hero .eyebrow{
+  display:inline-block;
+  padding:8px 16px;
+  border:1px solid var(--edge-soft);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:var(--text-dim);
+}
+
+.hero__accent{ color:#a8d0ec; }
+
+/* --- garantías --- */
+.perks{
+  display:flex; flex-wrap:wrap;
+  /* Las tres caben en una fila: con 190px de ancho y 30 de hueco
+     sumaban 630 contra los 619 de la columna y se partían. */
+  gap:clamp(12px,1.5vw,20px);
+  margin:clamp(26px,3vw,36px) 0 0; padding:0;
+  list-style:none;
+}
+.perk{
+  display:flex; align-items:center; gap:11px;
+  font-size:.85rem; line-height:1.3; color:var(--text-dim);
+  max-width:178px;
+}
+.perk__ico{
+  flex:none; display:grid; place-items:center;
+  width:38px; height:38px;
+  border:1px solid var(--edge-soft); border-radius:11px;
+  background:rgba(47,107,150,.18); color:#bfe0f5;
+  transition:color .3s ease, background .3s ease, border-color .3s ease;
+}
+.perk__ico svg{ width:18px; height:18px; }
+.perk:hover .perk__ico{
+  color:#d6f0ff; background:rgba(47,107,150,.32);
+  border-color:rgba(168,208,236,.36);
+}
+
+@media (max-width:900px){
+  .perk{ max-width:none; }
+  .perks{ gap:14px 22px; }
 }

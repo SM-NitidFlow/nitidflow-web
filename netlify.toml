@@ -1,7 +1,11 @@
-# Sitio estático: no hay build, se publica la raíz tal cual.
+# Sitio estático: no hay build, se publica la carpeta tal cual.
 [build]
   publish = "."
   command = ""
+
+# La detección de formularios es lo que activa Netlify Forms en el site.
+[build.processing]
+  skip_processing = false
 
 [[headers]]
   for = "/*"
@@ -16,3 +20,19 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# El HTML nunca se cachea: es lo que trae las referencias ?v= nuevas.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

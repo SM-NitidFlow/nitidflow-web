@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /thanks.html
 Disallow: /es/gracias.html
+
+Sitemap: https://nitidflow.com/sitemap.xml
