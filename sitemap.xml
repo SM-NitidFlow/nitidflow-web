@@ -6,57 +6,57 @@
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nitidflow.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://nitidflow.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nitidflow.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nitidflow.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nitidflow.com/"/>
   </url>
   <url>
-    <loc>https://nitidflow.com/es/</loc>
+    <loc>https://nitidflow.com/en/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nitidflow.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://nitidflow.com/es/"/>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nitidflow.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nitidflow.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nitidflow.com/"/>
   </url>
   <url>
-    <loc>https://nitidflow.com/es/automatizacion-facturacion/</loc>
+    <loc>https://nitidflow.com/verifactu/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nitidflow.com/es/automatizacion-whatsapp/</loc>
+    <loc>https://nitidflow.com/automatizacion-facturacion/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nitidflow.com/es/automatizar-holded/</loc>
+    <loc>https://nitidflow.com/automatizacion-whatsapp/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nitidflow.com/es/agentes-ia/</loc>
+    <loc>https://nitidflow.com/automatizar-holded/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nitidflow.com/es/automatizacion-clinicas/</loc>
+    <loc>https://nitidflow.com/automatizar-sage/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nitidflow.com/es/verifactu/</loc>
+    <loc>https://nitidflow.com/agentes-ia/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nitidflow.com/es/automatizar-sage/</loc>
+    <loc>https://nitidflow.com/automatizacion-clinicas/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

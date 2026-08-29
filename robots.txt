@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /thanks.html
-Disallow: /es/gracias.html
+
+# Páginas de agradecimiento: sin valor de búsqueda y contaminan las
+# métricas de conversión si Google las indexa como entrada.
+Disallow: /gracias.html
+Disallow: /en/thanks.html
 
 Sitemap: https://nitidflow.com/sitemap.xml

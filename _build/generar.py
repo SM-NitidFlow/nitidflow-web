@@ -13,7 +13,7 @@ import plantilla as P
 from landings import LANDINGS
 
 BASE = "https://nitidflow.com"
-V = "20260914"
+V = "20260917"
 RAIZ = os.path.join(os.path.dirname(__file__), "..")
 
 
@@ -51,7 +51,7 @@ def schema(l, url):
         # La miga de pan sale en el resultado de Google en lugar de la URL cruda.
         {"@type": "BreadcrumbList", "@id": url + "#breadcrumb",
          "itemListElement": [
-             {"@type": "ListItem", "position": 1, "name": "Inicio", "item": f"{BASE}/es/"},
+             {"@type": "ListItem", "position": 1, "name": "Inicio", "item": f"{BASE}/"},
              {"@type": "ListItem", "position": 2, "name": l["h1"], "item": url}]},
         {"@type": "FAQPage", "@id": url + "#faq",
          "mainEntity": [{"@type": "Question", "name": q,
@@ -62,14 +62,27 @@ def schema(l, url):
                       ensure_ascii=False, indent=1)
 
 
+def nav_para_landing():
+    """El navbar de la home apunta a sus propias secciones con anclas. En una
+    landing esas secciones no existen, así que los enlaces no llevaban a
+    ninguna parte: se reescriben hacia la home. La FAQ es la excepción,
+    porque cada landing tiene la suya."""
+    nav = P.NAV
+    for ancla in ["#services", "#how-it-works", "#automations", "#case-studies"]:
+        nav = nav.replace(f'href="{ancla}"', f'href="{ancla}"')
+    # El logo, en una landing, debe devolver a la home y no al inicio de sí misma.
+    nav = nav.replace('class="nav__brand" href="#top"', 'class="nav__brand" href="/"')
+    return nav
+
+
 def pagina(l):
-    url = f"{BASE}/es/{l['slug']}/"
+    url = f"{BASE}/{l['slug']}/"
     cuerpo = "\n\n".join(bloque(t, ps) for t, ps in l["secciones"])
     # Sólo tres relacionadas: una lista con todas diluye el enlazado
     # interno y ninguna recibe señal clara.
     otras = [o for o in LANDINGS if o["slug"] != l["slug"]][:3]
     relacionadas = "\n".join(
-        f'        <li><a href="/es/{o["slug"]}/">{o["h1"]}</a></li>' for o in otras)
+        f'        <li><a href="/{o["slug"]}/">{o["h1"]}</a></li>' for o in otras)
     return f"""<!doctype html>
 <html lang="es">
 <head>
@@ -108,13 +121,13 @@ def pagina(l):
 <a class="skip" href="#top">Saltar al contenido</a>
 
 {P.FONDO}
-{P.NAV}
+{nav_para_landing()}
 
 <main id="top">
 
   <section class="section ld__hero">
     <nav class="crumb reveal" aria-label="Miga de pan">
-      <a href="/es/">Inicio</a><span aria-hidden="true">/</span><span>{l['h1']}</span>
+      <a href="/">Inicio</a><span aria-hidden="true">/</span><span>{l['h1']}</span>
     </nav>
     <p class="eyebrow eyebrow--center reveal">{l['eyebrow']}</p>
     <h1 class="statement reveal">{l['h1']}</h1>
@@ -143,7 +156,7 @@ def pagina(l):
       <ul class="svc-links">
 {relacionadas}
       </ul>
-      <p class="ld__home">Somos <a href="/es/">NitidFlow, agencia de automatización con inteligencia artificial en Madrid</a>. Trabajamos con pymes y empresas de toda España.</p>
+      <p class="ld__home">Somos <a href="/">NitidFlow, agencia de automatización con inteligencia artificial en Madrid</a>. Trabajamos con pymes y empresas de toda España.</p>
     </div>
   </section>
 
@@ -161,7 +174,7 @@ def pagina(l):
 
 if __name__ == "__main__":
     for l in LANDINGS:
-        carpeta = os.path.join(RAIZ, "es", l["slug"])
+        carpeta = os.path.join(RAIZ, l["slug"])
         os.makedirs(carpeta, exist_ok=True)
         destino = os.path.join(carpeta, "index.html")
         html = pagina(l)
@@ -169,4 +182,4 @@ if __name__ == "__main__":
             fh.write(html)
         palabras = sum(len(" ".join(ps).split()) for _, ps in l["secciones"])
         palabras += sum(len(a.split()) for _, a in l["faq"])
-        print(f"  /es/{l['slug']}/   {len(html):>7,} bytes   ~{palabras} palabras propias")
+        print(f"  /{l['slug']}/   {len(html):>7,} bytes   ~{palabras} palabras propias")

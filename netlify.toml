@@ -36,3 +36,115 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# ============================================================
+# Reestructuración de idiomas (29-08-2026)
+#   El español pasa a la raíz y el inglés a /en/.
+#   301 permanente: traslada a las nuevas URLs la señal que Google
+#   ya hubiera acumulado en las antiguas. Sin esto se empieza de cero.
+# ============================================================
+[[redirects]]
+  from = "/es/"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/verifactu/"
+  to = "/verifactu/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/verifactu"
+  to = "/verifactu/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizacion-facturacion/"
+  to = "/automatizacion-facturacion/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizacion-facturacion"
+  to = "/automatizacion-facturacion/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizacion-whatsapp/"
+  to = "/automatizacion-whatsapp/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizacion-whatsapp"
+  to = "/automatizacion-whatsapp/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizar-holded/"
+  to = "/automatizar-holded/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizar-holded"
+  to = "/automatizar-holded/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizar-sage/"
+  to = "/automatizar-sage/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizar-sage"
+  to = "/automatizar-sage/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/agentes-ia/"
+  to = "/agentes-ia/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/agentes-ia"
+  to = "/agentes-ia/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizacion-clinicas/"
+  to = "/automatizacion-clinicas/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/automatizacion-clinicas"
+  to = "/automatizacion-clinicas/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/gracias.html"
+  to = "/gracias.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/gracias"
+  to = "/gracias.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/thanks.html"
+  to = "/en/thanks.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/thanks"
+  to = "/en/thanks.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/es/*"
+  to = "/:splat"
+  status = 301
+  force = true

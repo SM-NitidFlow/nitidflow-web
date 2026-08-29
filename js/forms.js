@@ -20,10 +20,10 @@
        /webhook/…       is the production url. It needs the workflow ACTIVE
                         (toggle top-right in n8n).
 
-     Before going live, swap the line below for:
-       var HOOK = 'https://n8n.nitidflow.com/webhook/contacto-web';
+     En producción se usa /webhook/. El workflow debe estar ACTIVO en n8n
+     para que esa ruta responda.
      --------------------------------------------------------------------- */
-  var HOOK = 'https://n8n.nitidflow.com/webhook-test/contacto-web';
+  var HOOK = 'https://n8n.nitidflow.com/webhook/contacto-web';
 
   var form = document.querySelector('form[name="audit"]');
   if (!form) return;
@@ -34,8 +34,16 @@
     var data = new FormData(form);
     data.delete('bot-field');            // honeypot — nothing to forward
 
+    /* El workflow de n8n lee nombre/empresa/mensaje, y el formulario usa
+       name/company/message porque son los nombres con los que Netlify Forms
+       guarda el envío. Se traduce aquí, en el único punto donde los dos
+       mundos se tocan, en lugar de renombrar los campos del formulario y
+       romper el histórico ya almacenado en Netlify. */
+    var ALIAS = { name: 'nombre', company: 'empresa', message: 'mensaje' };
+
     var body = new URLSearchParams();
-    data.forEach(function (v, k) { body.append(k, v); });
+    data.forEach(function (v, k) { body.append(ALIAS[k] || k, v); });
+    if (!body.has('telefono')) body.append('telefono', '');   // el workflow lo espera
     body.append('page', location.href);
     body.append('submittedAt', new Date().toISOString());
     var payload = body.toString();
