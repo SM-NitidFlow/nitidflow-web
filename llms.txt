@@ -1,0 +1,35 @@
+# NitidFlow
+
+> Agencia de automatización con inteligencia artificial en Madrid. Auditamos
+> las operaciones de pymes y empresas españolas, identificamos el trabajo
+> repetitivo y construimos automatizaciones a medida que se quedan en las
+> cuentas del cliente.
+
+## Qué hacemos
+Automatizamos procesos empresariales conectando las herramientas que la
+empresa ya usa: Holded, Sage, Odoo, Factorial, Microsoft 365, HubSpot,
+PrestaShop, WhatsApp Business y cualquier otra con API. Trabajamos sobre
+n8n autoalojado, de modo que la lógica y los datos permanecen en la
+infraestructura del cliente.
+
+## Principios
+- Los datos son del cliente y viven en sus cuentas, documentados
+- Revisión humana antes de cualquier envío al cliente final
+- Cumplimiento español (RGPD, Verifactu) por delante de la elegancia técnica
+- No automatizamos un proceso antes de entenderlo
+
+## Páginas
+- [Inicio](https://nitidflow.com/): agencia de automatización con IA en Madrid
+- [Verifactu](https://nitidflow.com/verifactu/): adaptar la facturación al reglamento
+- [Automatización de facturación](https://nitidflow.com/automatizacion-facturacion/)
+- [Automatización de WhatsApp](https://nitidflow.com/automatizacion-whatsapp/)
+- [Automatizar Holded](https://nitidflow.com/automatizar-holded/)
+- [Automatizar Sage](https://nitidflow.com/automatizar-sage/)
+- [Agentes de IA](https://nitidflow.com/agentes-ia/)
+- [Automatización para clínicas](https://nitidflow.com/automatizacion-clinicas/)
+- [English](https://nitidflow.com/en/)
+
+## Contacto
+- Teléfono: +34 683 49 16 55
+- Email: hello@nitidflow.com
+- Auditoría gratuita: https://cal.com/smnitidflow

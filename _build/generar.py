@@ -13,7 +13,7 @@ import plantilla as P
 from landings import LANDINGS
 
 BASE = "https://nitidflow.com"
-V = "20260925"
+V = "20260927"
 RAIZ = os.path.join(os.path.dirname(__file__), "..")
 HOY = __import__("datetime").date.today().isoformat()
 
@@ -82,9 +82,12 @@ def nav_para_landing():
 def pagina(l):
     url = f"{BASE}/{l['slug']}/"
     cuerpo = "\n\n".join(bloque(t, ps) for t, ps in l["secciones"])
-    # Sólo tres relacionadas: una lista con todas diluye el enlazado
-    # interno y ninguna recibe señal clara.
-    otras = [o for o in LANDINGS if o["slug"] != l["slug"]][:3]
+    # Ventana rotativa: cada landing enlaza a las tres siguientes del ciclo.
+    # Cogiendo siempre las tres primeras del array, las últimas quedaban sin
+    # un solo enlace entrante — Verifactu, Sage y clínicas estaban huérfanas
+    # mientras otras acumulaban siete. Así todas reciben exactamente tres.
+    i = LANDINGS.index(l)
+    otras = [LANDINGS[(i + k) % len(LANDINGS)] for k in range(1, 4)]
     relacionadas = "\n".join(
         f'        <li><a href="/{o["slug"]}/">{o["h1"]}</a></li>' for o in otras)
     return f"""<!doctype html>
@@ -116,7 +119,7 @@ def pagina(l):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="/assets/background-poster.webp" type="image/webp">
-<link rel="stylesheet" href="/css/styles.css?v={V}">
+<link rel="stylesheet" href="/css/styles.min.css?v={V}">
 <script type="application/ld+json">
 {schema(l, url)}
 </script>

@@ -22,7 +22,7 @@ FONDO = """<div class="bg" aria-hidden="true">
 NAV = """<header class="nav" id="nav">
   <div class="nav__inner">
     <a class="nav__brand" href="#top" aria-label="Nitidflow — inicio">
-      <span class="logoclip logoclip--sm"><picture><source srcset="/assets/logo.webp?v=20260924" type="image/webp"><img src="/assets/logo.png?v=20260924" alt="Nitidflow" width="660" height="130"></picture></span>
+      <span class="logoclip logoclip--sm"><picture><source srcset="/assets/logo.webp?v=20260925" type="image/webp"><img src="/assets/logo.png?v=20260925" alt="Nitidflow" width="660" height="130"></picture></span>
     </a>
 
     <nav class="nav__links" id="nav-links" aria-label="Principal">
@@ -109,7 +109,7 @@ CTA = """<section class="section section--contact" id="book-audit">
 FOOTER = """<footer class="footer">
   <div class="footer__top">
     <div class="footer__brand">
-      <span class="logoclip logoclip--sm"><picture><source srcset="/assets/logo.webp?v=20260924" type="image/webp"><img src="/assets/logo.png?v=20260924" alt="Nitidflow" width="660" height="130"></picture></span>
+      <span class="logoclip logoclip--sm"><picture><source srcset="/assets/logo.webp?v=20260925" type="image/webp"><img src="/assets/logo.png?v=20260925" alt="Nitidflow" width="660" height="130"></picture></span>
       <p>Automatizamos el trabajo que ralentiza tu negocio. Automatizaciones con IA llave en mano que ahorran tiempo, reducen costes y escalan contigo.</p>
     
       <ul class="footer__nap">
@@ -190,9 +190,9 @@ FOOTER = """<footer class="footer">
 
 SCRIPTS = """<script src="/js/vendor/gsap.min.js"></script>
 <script src="/js/vendor/ScrollTrigger.min.js"></script>
-<script src="/js/main.js?v=20260924" defer></script>
-<script src="/js/silk.js?v=20260924" defer></script>
-<script src="/js/cal.js?v=20260924" defer></script>
-<script src="/js/forms.js?v=20260924" defer></script>
+<script src="/js/main.min.js?v=20260925" defer></script>
+<script src="/js/silk.min.js?v=20260925" defer></script>
+<script src="/js/cal.min.js?v=20260925" defer></script>
+<script src="/js/forms.min.js?v=20260925" defer></script>
 """
 
